@@ -6,29 +6,24 @@
 
 <title>Joshua Castillo Medina | Embajador de Marca</title>
 
-<meta name="description" content="Portafolio profesional de Joshua Castillo Medina — Embajador de Marca, Ventas, Atención al Cliente y Community Management.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-
 <style>
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+
 :root{
-    --ink:#111312;
-    --muted:#6d716c;
-    --paper:#f5f2ec;
-    --cream:#e9e3d8;
-    --line:rgba(17,19,18,.12);
-    --accent:#b49363;
+    --black:#111311;
+    --cream:#f3efe8;
+    --cream2:#e8e0d4;
     --white:#fffdf9;
+    --gray:#70736e;
+    --gold:#b39261;
+    --line:rgba(17,19,17,.14);
 }
 
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 html{
@@ -36,10 +31,10 @@ html{
 }
 
 body{
+    background:var(--cream);
+    color:var(--black);
     font-family:'DM Sans',sans-serif;
-    background:var(--paper);
-    color:var(--ink);
-    line-height:1.6;
+    overflow-x:hidden;
 }
 
 a{
@@ -53,420 +48,446 @@ img{
 }
 
 
-/* =========================
-   NAVBAR
-========================= */
+/* ==========================================
+   NAV
+========================================== */
 
 .nav{
     position:fixed;
     top:0;
     left:0;
-    right:0;
-    z-index:50;
+    width:100%;
+    z-index:100;
 
     display:flex;
-    align-items:center;
     justify-content:space-between;
+    align-items:center;
 
-    padding:22px 5vw;
+    padding:25px 6vw;
 
     color:white;
 
     mix-blend-mode:difference;
 }
 
-.brand{
-    font-size:12px;
-    letter-spacing:.22em;
-    text-transform:uppercase;
+.logo{
+    font-size:13px;
     font-weight:700;
+    letter-spacing:.25em;
 }
 
-.navlinks{
+.nav-menu{
     display:flex;
     gap:30px;
+}
 
-    font-size:12px;
+.nav-menu a{
+    font-size:11px;
     text-transform:uppercase;
-    letter-spacing:.14em;
-}
-
-.navlinks a{
-    opacity:.8;
-    transition:.3s;
-}
-
-.navlinks a:hover{
-    opacity:1;
+    letter-spacing:.15em;
 }
 
 
-/* =========================
+/* ==========================================
    HERO
-========================= */
+========================================== */
 
 .hero{
+    min-height:100vh;
     min-height:100svh;
 
     position:relative;
 
-    background:#111;
-
-    display:grid;
-    align-items:end;
+    display:flex;
+    align-items:flex-end;
 
     overflow:hidden;
+
+    background:#171717;
 
     color:white;
 }
 
-.hero-bg{
+.hero-image{
     position:absolute;
     inset:0;
 
-    background:
-        url('1.jpg')
-        center 28% /
-        cover
-        no-repeat;
+    z-index:0;
 
-    filter:saturate(.75);
+    background-image:url("./1.jpg");
+    background-position:center center;
+    background-size:cover;
+    background-repeat:no-repeat;
+
+    transform:scale(1.01);
 }
 
-.hero-bg:after{
-    content:"";
-
+.hero-overlay{
     position:absolute;
     inset:0;
+
+    z-index:1;
 
     background:
         linear-gradient(
-            180deg,
-            rgba(0,0,0,.2) 0%,
-            rgba(0,0,0,.12) 35%,
-            rgba(0,0,0,.78) 100%
+            to bottom,
+            rgba(0,0,0,.12),
+            rgba(0,0,0,.2) 45%,
+            rgba(0,0,0,.82)
         );
 }
 
 .hero-content{
     position:relative;
+
     z-index:2;
+
+    width:100%;
 
     padding:
         0
         7vw
-        7vh;
-
-    max-width:1000px;
+        8vh;
 }
 
-.eyebrow{
+.small-title{
     font-size:11px;
-    letter-spacing:.28em;
+
     text-transform:uppercase;
 
-    margin-bottom:20px;
+    letter-spacing:.3em;
 
-    color:#ddd;
+    margin-bottom:22px;
+
+    color:#dedede;
 }
 
 .hero h1{
     font-family:'Playfair Display',serif;
 
-    font-size:clamp(58px,10vw,145px);
-
-    line-height:.88;
-
     font-weight:500;
 
-    letter-spacing:-.045em;
+    font-size:
+        clamp(
+            60px,
+            11vw,
+            160px
+        );
+
+    line-height:.82;
+
+    letter-spacing:-.055em;
 }
 
 .hero h1 span{
     display:block;
 }
 
-.hero-bottom{
-    margin-top:35px;
+.hero-info{
+    margin-top:42px;
 
     display:flex;
-    align-items:flex-end;
+
     justify-content:space-between;
+
+    align-items:end;
 
     gap:30px;
 }
 
-.hero-role{
-    font-size:14px;
-
-    line-height:1.8;
-
-    letter-spacing:.05em;
+.role{
+    font-size:13px;
 
     text-transform:uppercase;
+
+    letter-spacing:.08em;
+
+    line-height:1.8;
 
     color:#ddd;
 }
 
-.hero-cta{
-    border:1px solid rgba(255,255,255,.5);
+.hero-button{
+    border:1px solid rgba(255,255,255,.6);
 
-    padding:14px 22px;
+    padding:15px 24px;
 
-    font-size:11px;
-
-    letter-spacing:.18em;
+    font-size:10px;
 
     text-transform:uppercase;
+
+    letter-spacing:.2em;
 
     transition:.3s;
 }
 
-.hero-cta:hover{
-    background:#fff;
-    color:#111;
+.hero-button:hover{
+    background:white;
+    color:black;
 }
 
 
-/* =========================
-   GENERAL SECTIONS
-========================= */
+/* ==========================================
+   GENERAL
+========================================== */
 
 section{
-    padding:120px 7vw;
+    padding:130px 7vw;
 }
 
-.section-label{
-    font-size:11px;
+.label{
+    font-size:10px;
+
+    text-transform:uppercase;
 
     letter-spacing:.25em;
 
-    text-transform:uppercase;
+    color:var(--gray);
 
-    color:var(--muted);
-
-    margin-bottom:30px;
+    margin-bottom:28px;
 }
 
 
-/* =========================
+/* ==========================================
    PROFILE
-========================= */
+========================================== */
 
-.intro{
+.profile{
     display:grid;
 
-    grid-template-columns:1fr 1.8fr;
+    grid-template-columns:
+        minmax(250px,1fr)
+        minmax(300px,1.6fr);
 
-    gap:8vw;
-
-    align-items:start;
+    gap:9vw;
 }
 
-.intro h2{
+.profile-title{
     font-family:'Playfair Display',serif;
 
-    font-size:clamp(38px,5vw,72px);
+    font-size:
+        clamp(
+            42px,
+            5vw,
+            72px
+        );
 
-    line-height:1.02;
+    line-height:.98;
 
     font-weight:500;
 
-    letter-spacing:-.035em;
+    letter-spacing:-.04em;
 }
 
-.intro-copy{
-    font-size:19px;
+.profile-text{
+    max-width:700px;
 
-    max-width:680px;
+    font-size:18px;
 
-    color:#393d38;
+    line-height:1.8;
+
+    color:#40433f;
 }
 
-.intro-copy p+p{
-    margin-top:22px;
-}
-
-.rule{
-    height:1px;
-
-    background:var(--line);
-
-    margin:70px 0;
+.profile-text p+p{
+    margin-top:25px;
 }
 
 
-/* =========================
-   STATS
-========================= */
+/* ==========================================
+   HIGHLIGHTS
+========================================== */
 
-.stats{
+.highlights{
+    margin-top:80px;
+
+    border-top:1px solid var(--line);
+
+    border-bottom:1px solid var(--line);
+
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
-
-    gap:1px;
-
-    background:var(--line);
-
-    border:1px solid var(--line);
+    grid-template-columns:
+        repeat(3,1fr);
 }
 
-.stat{
-    background:var(--paper);
-
+.highlight{
     padding:30px;
+
+    border-right:1px solid var(--line);
 }
 
-.stat strong{
-    display:block;
+.highlight:last-child{
+    border-right:none;
+}
 
+.highlight-number{
     font-family:'Playfair Display',serif;
 
-    font-size:38px;
+    font-size:35px;
 
-    font-weight:500;
+    margin-bottom:8px;
 }
 
-.stat span{
-    font-size:11px;
+.highlight-title{
+    font-size:10px;
 
     text-transform:uppercase;
 
-    letter-spacing:.13em;
+    letter-spacing:.16em;
 
-    color:var(--muted);
+    color:var(--gray);
 }
 
 
-/* =========================
+/* ==========================================
    EXPERIENCE
-========================= */
+========================================== */
 
 .experience{
     background:var(--white);
 }
 
 .timeline{
-    margin-top:40px;
-
     border-top:1px solid var(--line);
+
+    margin-top:50px;
 }
 
 .job{
     display:grid;
 
-    grid-template-columns:1fr 2.2fr;
+    grid-template-columns:
+        minmax(150px,1fr)
+        minmax(300px,2.5fr);
 
-    gap:7vw;
+    gap:8vw;
 
-    padding:44px 0;
+    padding:50px 0;
 
     border-bottom:1px solid var(--line);
 }
 
-.job-meta{
-    color:var(--muted);
+.job-date{
+    font-size:11px;
 
-    font-size:12px;
+    letter-spacing:.16em;
 
     text-transform:uppercase;
 
-    letter-spacing:.12em;
+    color:var(--gray);
 }
 
-.job h3{
-    font-size:25px;
+.job-title{
+    font-size:26px;
 
     font-weight:600;
 
-    margin-bottom:5px;
+    line-height:1.2;
 }
 
-.company{
-    color:var(--accent);
+.job-company{
+    margin-top:7px;
+
+    color:var(--gold);
 
     font-size:13px;
 
-    margin-bottom:18px;
-
     font-weight:600;
 }
 
-.job ul{
+.job-list{
     list-style:none;
 
-    color:#50534f;
+    margin-top:24px;
+
+    color:#555852;
+
+    font-size:14px;
 }
 
-.job li{
+.job-list li{
+    margin:9px 0;
+
+    padding-left:20px;
+
     position:relative;
-
-    padding-left:18px;
-
-    margin:7px 0;
 }
 
-.job li:before{
-    content:'—';
+.job-list li::before{
+    content:"—";
 
     position:absolute;
 
     left:0;
 
-    color:var(--accent);
+    color:var(--gold);
 }
 
 
-/* =========================
+/* ==========================================
    SKILLS
-========================= */
+========================================== */
 
-.skills{
+.skills-section{
     display:grid;
 
-    grid-template-columns:1fr 2fr;
+    grid-template-columns:
+        minmax(250px,1fr)
+        minmax(300px,2fr);
 
     gap:8vw;
 }
 
-.skills h2,
-.album h2{
+.skills-title{
     font-family:'Playfair Display',serif;
 
-    font-size:clamp(40px,5vw,70px);
+    font-size:
+        clamp(
+            42px,
+            5vw,
+            72px
+        );
+
+    line-height:.95;
 
     font-weight:500;
-
-    line-height:1;
 }
 
-.skill-grid{
+.skills{
     display:flex;
 
     flex-wrap:wrap;
 
-    gap:10px;
+    gap:11px;
 
     align-content:start;
 }
 
-.pill{
+.skill{
     border:1px solid var(--line);
 
-    padding:13px 17px;
+    padding:13px 18px;
 
     border-radius:100px;
 
-    font-size:13px;
+    font-size:12px;
 
-    background:rgba(255,255,255,.28);
+    transition:.25s;
+}
+
+.skill:hover{
+    background:var(--black);
+
+    color:white;
+
+    border-color:var(--black);
 }
 
 
-/* =========================
+/* ==========================================
    ALBUM
-========================= */
+========================================== */
 
 .album{
     background:#151715;
@@ -474,140 +495,217 @@ section{
     color:white;
 }
 
-.album .section-label{
-    color:#aaa;
+.album .label{
+    color:#969995;
 }
 
-.album-intro{
+.album-header{
     display:flex;
 
     justify-content:space-between;
 
     align-items:end;
 
-    gap:30px;
+    gap:40px;
 
     margin-bottom:55px;
 }
 
-.album-note{
+.album-title{
+    font-family:'Playfair Display',serif;
+
+    font-size:
+        clamp(
+            50px,
+            7vw,
+            100px
+        );
+
+    line-height:.9;
+
+    font-weight:500;
+
+    letter-spacing:-.045em;
+}
+
+.album-description{
     max-width:340px;
 
-    color:#aeb0ab;
+    color:#a7aaa5;
 
     font-size:14px;
+
+    line-height:1.7;
 }
+
+
+/* ==========================================
+   GALLERY
+========================================== */
 
 .gallery{
     display:grid;
 
-    grid-template-columns:repeat(12,1fr);
+    grid-template-columns:
+        repeat(12,1fr);
 
     gap:14px;
 }
 
-.gallery figure{
+.photo{
+    position:relative;
+
     overflow:hidden;
 
-    background:#222;
-
-    position:relative;
+    background:#262826;
 
     cursor:pointer;
 }
 
-.gallery img{
+.photo img{
     height:100%;
+
+    width:100%;
 
     object-fit:cover;
 
     transition:
         transform .8s
         cubic-bezier(.2,.7,.2,1);
-
-    filter:saturate(.92);
 }
 
-.gallery figure:hover img{
-    transform:scale(1.045);
+.photo:hover img{
+    transform:scale(1.05);
 }
 
-
-/* Gallery layout */
-
-.g1{
-    grid-column:span 7;
-    height:620px;
-}
-
-.g2{
-    grid-column:span 5;
-    height:620px;
-}
-
-.g3{
-    grid-column:span 5;
-    height:520px;
-}
-
-.g4{
-    grid-column:span 7;
-    height:520px;
-}
-
-.g5{
-    grid-column:span 4;
-    height:450px;
-}
-
-.g6{
-    grid-column:span 4;
-    height:450px;
-}
-
-.g7{
-    grid-column:span 4;
-    height:450px;
-}
-
-.g8{
-    grid-column:span 7;
-    height:560px;
-}
-
-.g9{
-    grid-column:span 5;
-    height:560px;
-}
-
-.caption{
+.photo-number{
     position:absolute;
 
-    left:18px;
     bottom:15px;
+
+    left:18px;
+
+    z-index:3;
 
     font-size:10px;
 
-    letter-spacing:.15em;
-
-    text-transform:uppercase;
+    letter-spacing:.18em;
 
     color:white;
+}
 
-    opacity:.7;
+.photo-1{
+    grid-column:span 7;
+    height:620px;
+}
+
+.photo-2{
+    grid-column:span 5;
+    height:620px;
+}
+
+.photo-3{
+    grid-column:span 5;
+    height:500px;
+}
+
+.photo-4{
+    grid-column:span 7;
+    height:500px;
+}
+
+.photo-5{
+    grid-column:span 4;
+    height:430px;
+}
+
+.photo-6{
+    grid-column:span 4;
+    height:430px;
+}
+
+.photo-7{
+    grid-column:span 4;
+    height:430px;
+}
+
+.photo-8{
+    grid-column:span 7;
+    height:560px;
+}
+
+.photo-9{
+    grid-column:span 5;
+    height:560px;
 }
 
 
-/* =========================
+/* ==========================================
+   ERROR IMAGE
+========================================== */
+
+.image-error{
+    position:absolute;
+
+    inset:0;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:20px;
+
+    background:#242624;
+
+    color:#aaa;
+}
+
+.image-error strong{
+    color:white;
+
+    font-size:13px;
+
+    margin-bottom:8px;
+}
+
+.image-error span{
+    font-size:11px;
+}
+
+
+/* ==========================================
    EDUCATION
-========================= */
+========================================== */
 
 .education{
     display:grid;
 
-    grid-template-columns:1fr 2fr;
+    grid-template-columns:
+        minmax(250px,1fr)
+        minmax(300px,2fr);
 
     gap:8vw;
+}
+
+.education-title{
+    font-family:'Playfair Display',serif;
+
+    font-size:
+        clamp(
+            42px,
+            5vw,
+            72px
+        );
+
+    line-height:.95;
+
+    font-weight:500;
 }
 
 .education-card{
@@ -621,24 +719,26 @@ section{
 .education-card h3{
     font-family:'Playfair Display',serif;
 
-    font-size:34px;
+    font-size:32px;
 
     font-weight:500;
 }
 
 .education-card p{
-    color:var(--muted);
+    color:var(--gray);
 
-    margin-top:8px;
+    margin-top:10px;
+
+    font-size:14px;
 }
 
 
-/* =========================
+/* ==========================================
    CONTACT
-========================= */
+========================================== */
 
 .contact{
-    background:var(--cream);
+    background:var(--cream2);
 
     min-height:65vh;
 
@@ -649,21 +749,24 @@ section{
     justify-content:space-between;
 }
 
-.contact h2{
+.contact-title{
     font-family:'Playfair Display',serif;
 
-    font-size:clamp(55px,9vw,130px);
+    font-size:
+        clamp(
+            55px,
+            10vw,
+            145px
+        );
+
+    line-height:.85;
 
     font-weight:500;
 
-    line-height:.9;
-
-    letter-spacing:-.05em;
-
-    max-width:1000px;
+    letter-spacing:-.055em;
 }
 
-.contact-row{
+.contact-bottom{
     display:flex;
 
     justify-content:space-between;
@@ -675,8 +778,10 @@ section{
     margin-top:70px;
 }
 
-.contact-info{
-    display:grid;
+.contact-data{
+    display:flex;
+
+    flex-direction:column;
 
     gap:8px;
 
@@ -684,48 +789,48 @@ section{
 }
 
 .contact-label{
-    font-size:10px;
+    font-size:9px;
 
     text-transform:uppercase;
 
-    letter-spacing:.18em;
+    letter-spacing:.2em;
 
-    color:var(--muted);
+    color:var(--gray);
+
+    margin-top:12px;
 }
 
-.cv-btn{
-    display:inline-block;
-
-    background:var(--ink);
+.pdf-button{
+    background:var(--black);
 
     color:white;
 
     padding:17px 25px;
 
-    text-transform:uppercase;
-
-    letter-spacing:.15em;
-
     font-size:10px;
+
+    letter-spacing:.17em;
+
+    text-transform:uppercase;
 
     transition:.3s;
 }
 
-.cv-btn:hover{
+.pdf-button:hover{
     transform:translateY(-3px);
 }
 
 
-/* =========================
+/* ==========================================
    FOOTER
-========================= */
+========================================== */
 
-.footer{
-    background:#111312;
-
-    color:#999;
-
+footer{
     padding:25px 7vw;
+
+    background:#111311;
+
+    color:#8b8e89;
 
     font-size:10px;
 
@@ -739,18 +844,18 @@ section{
 }
 
 
-/* =========================
+/* ==========================================
    LIGHTBOX
-========================= */
+========================================== */
 
 .lightbox{
     position:fixed;
 
     inset:0;
 
-    background:rgba(0,0,0,.94);
+    z-index:500;
 
-    z-index:100;
+    background:rgba(0,0,0,.95);
 
     display:none;
 
@@ -761,14 +866,14 @@ section{
     padding:30px;
 }
 
-.lightbox.open{
+.lightbox.active{
     display:flex;
 }
 
 .lightbox img{
-    max-height:90vh;
+    max-width:90vw;
 
-    max-width:92vw;
+    max-height:90vh;
 
     width:auto;
 
@@ -778,77 +883,74 @@ section{
 .close{
     position:absolute;
 
-    top:22px;
+    right:25px;
 
-    right:30px;
+    top:15px;
 
-    color:white;
-
-    font-size:32px;
-
-    cursor:pointer;
-
-    font-weight:300;
+    border:none;
 
     background:none;
 
-    border:0;
+    color:white;
+
+    font-size:40px;
+
+    cursor:pointer;
 }
 
-.prev,
-.next{
+.arrow{
     position:absolute;
 
     top:50%;
 
     transform:translateY(-50%);
 
+    border:none;
+
+    background:none;
+
     color:white;
 
-    font-size:34px;
+    font-size:50px;
 
     cursor:pointer;
 
     padding:20px;
-
-    background:none;
-
-    border:0;
 }
 
-.prev{
+.arrow-left{
     left:15px;
 }
 
-.next{
+.arrow-right{
     right:15px;
 }
 
 
-/* =========================
-   SCROLL ANIMATION
-========================= */
+/* ==========================================
+   REVEAL
+========================================== */
 
 .reveal{
     opacity:0;
 
-    transform:translateY(24px);
+    transform:translateY(25px);
 
     transition:
         opacity .8s ease,
         transform .8s ease;
 }
 
-.reveal.visible{
+.reveal.show{
     opacity:1;
 
     transform:none;
 }
 
 
-/* =========================
+/* ==========================================
    MOBILE
-========================= */
+========================================== */
 
 @media(max-width:800px){
 
@@ -856,8 +958,12 @@ section{
         padding:18px 5vw;
     }
 
-    .navlinks{
+    .nav-menu{
         display:none;
+    }
+
+    section{
+        padding:90px 6vw;
     }
 
     .hero-content{
@@ -871,43 +977,50 @@ section{
         font-size:18vw;
     }
 
-    .hero-bottom{
-        align-items:start;
-
+    .hero-info{
         flex-direction:column;
+
+        align-items:flex-start;
     }
 
-    .intro,
-    .skills,
-    .education,
+    .profile,
+    .skills-section,
+    .education{
+        grid-template-columns:1fr;
+
+        gap:35px;
+    }
+
+    .profile-text{
+        font-size:16px;
+    }
+
+    .highlights{
+        grid-template-columns:1fr;
+    }
+
+    .highlight{
+        border-right:none;
+
+        border-bottom:1px solid var(--line);
+    }
+
+    .highlight:last-child{
+        border-bottom:none;
+    }
+
     .job{
         grid-template-columns:1fr;
 
-        gap:28px;
+        gap:22px;
+
+        padding:38px 0;
     }
 
-    .intro-copy{
-        font-size:17px;
-    }
+    .album-header{
+        flex-direction:column;
 
-    .stats{
-        grid-template-columns:1fr;
-    }
-
-    .stat{
-        padding:24px;
-    }
-
-    .job{
-        padding:34px 0;
-    }
-
-    .album-intro{
-        display:block;
-    }
-
-    .album-note{
-        margin-top:20px;
+        align-items:flex-start;
     }
 
     .gallery{
@@ -916,62 +1029,45 @@ section{
         gap:8px;
     }
 
-    .gallery figure{
-        height:300px;
+    .photo-1,
+    .photo-4,
+    .photo-8{
+        grid-column:span 2;
     }
 
-    .g1,
-    .g2,
-    .g3,
-    .g4,
-    .g5,
-    .g6,
-    .g7,
-    .g8,
-    .g9{
+    .photo-1{
+        height:430px;
+    }
+
+    .photo-2,
+    .photo-3,
+    .photo-5,
+    .photo-6,
+    .photo-7,
+    .photo-9{
         grid-column:span 1;
 
         height:300px;
     }
 
-    .g1{
-        grid-column:span 2;
-
-        height:430px;
-    }
-
-    .g4{
-        grid-column:span 2;
-
+    .photo-4{
         height:380px;
     }
 
-    .g8{
-        grid-column:span 2;
-
+    .photo-8{
         height:400px;
     }
 
-    section{
-        padding:85px 6vw;
-    }
-
-    .contact{
-        min-height:70vh;
-    }
-
-    .contact-row{
-        align-items:start;
-
+    .contact-bottom{
         flex-direction:column;
+
+        align-items:flex-start;
     }
 
-    .footer{
-        padding:22px 6vw;
-
-        gap:15px;
-
+    footer{
         flex-direction:column;
+
+        gap:12px;
     }
 
 }
@@ -983,17 +1079,17 @@ section{
 <body>
 
 
-<!-- =========================
+<!-- ======================================
      NAVIGATION
-========================= -->
+======================================= -->
 
 <nav class="nav">
 
-    <a class="brand" href="#inicio">
+    <a href="#inicio" class="logo">
         JCM
     </a>
 
-    <div class="navlinks">
+    <div class="nav-menu">
 
         <a href="#perfil">
             Perfil
@@ -1016,18 +1112,24 @@ section{
 </nav>
 
 
-<!-- =========================
+
+<!-- ======================================
      HERO
-========================= -->
+======================================= -->
 
 <header class="hero" id="inicio">
 
-    <div class="hero-bg"></div>
+    <div
+        class="hero-image"
+        id="heroImage"
+    ></div>
 
-    <div class="hero-content">
+    <div class="hero-overlay"></div>
 
-        <div class="eyebrow">
-            Portafolio profesional · Cancún, Quintana Roo
+    <div class="hero-content reveal">
+
+        <div class="small-title">
+            Portafolio profesional
         </div>
 
         <h1>
@@ -1036,19 +1138,25 @@ section{
             Medina
         </h1>
 
-        <div class="hero-bottom">
+        <div class="hero-info">
 
-            <div class="hero-role">
+            <div class="role">
 
                 Embajador de marca
                 <br>
 
-                Ventas · Atención al cliente · Community Management
+                Ventas · Atención al cliente
+                <br>
+
+                Community Management
 
             </div>
 
-            <a class="hero-cta" href="#perfil">
-                Conocer perfil ↓
+            <a
+                href="#perfil"
+                class="hero-button"
+            >
+                Ver perfil ↓
             </a>
 
         </div>
@@ -1058,40 +1166,54 @@ section{
 </header>
 
 
-<!-- =========================
+
+<!-- ======================================
      PERFIL
-========================= -->
+======================================= -->
 
 <section id="perfil">
 
-    <div class="intro reveal">
+    <div class="profile reveal">
 
         <div>
 
-            <div class="section-label">
-                01 / Perfil
+            <div class="label">
+                01 / Perfil profesional
             </div>
 
-            <h2>
-                Profesional que convierte relaciones en oportunidades.
+            <h2 class="profile-title">
+                Relaciones que
+                <br>
+                generan
+                <br>
+                oportunidades.
             </h2>
 
         </div>
 
 
-        <div class="intro-copy">
+        <div class="profile-text">
 
             <p>
-                Profesional con experiencia en ventas, atención al cliente,
-                generación de prospectos y manejo de redes sociales,
+                Profesional con experiencia en ventas,
+                atención al cliente, generación de
+                prospectos y manejo de redes sociales,
                 trabajando para empresas estadounidenses.
             </p>
 
             <p>
-                Experiencia en ventas consultivas, contacto directo con
-                clientes, cotizaciones, cierre de ventas, seguimiento
-                comercial y servicio postventa. Facilidad de palabra,
-                actitud de servicio, enfoque a resultados y capacidad para
+                Experiencia en ventas consultivas,
+                contacto directo con clientes,
+                elaboración de cotizaciones, cierre de
+                ventas, seguimiento comercial y servicio
+                postventa.
+            </p>
+
+            <p>
+                Se caracteriza por tener facilidad de
+                palabra, actitud de servicio, enfoque a
+                resultados y capacidad para generar
+                relaciones positivas con los clientes y
                 representar una marca de manera profesional.
             </p>
 
@@ -1100,46 +1222,43 @@ section{
     </div>
 
 
-    <div class="rule"></div>
+    <div class="highlights reveal">
 
+        <div class="highlight">
 
-    <div class="stats reveal">
-
-        <div class="stat">
-
-            <strong>
+            <div class="highlight-number">
                 Ventas
-            </strong>
+            </div>
 
-            <span>
-                Consultivas y cierre comercial
-            </span>
+            <div class="highlight-title">
+                Cierre comercial
+            </div>
 
         </div>
 
 
-        <div class="stat">
+        <div class="highlight">
 
-            <strong>
+            <div class="highlight-number">
                 Clientes
-            </strong>
+            </div>
 
-            <span>
-                Seguimiento y servicio postventa
-            </span>
+            <div class="highlight-title">
+                Atención y postventa
+            </div>
 
         </div>
 
 
-        <div class="stat">
+        <div class="highlight">
 
-            <strong>
+            <div class="highlight-number">
                 Marca
-            </strong>
+            </div>
 
-            <span>
-                Representación y comunicación
-            </span>
+            <div class="highlight-title">
+                Representación profesional
+            </div>
 
         </div>
 
@@ -1148,13 +1267,17 @@ section{
 </section>
 
 
-<!-- =========================
+
+<!-- ======================================
      EXPERIENCIA
-========================= -->
+======================================= -->
 
-<section class="experience" id="experiencia">
+<section
+    class="experience"
+    id="experiencia"
+>
 
-    <div class="section-label">
+    <div class="label">
         02 / Experiencia profesional
     </div>
 
@@ -1162,51 +1285,50 @@ section{
     <div class="timeline">
 
 
-        <!-- JOB 1 -->
-
         <article class="job reveal">
 
-            <div class="job-meta">
+            <div class="job-date">
                 2020 — 2022
             </div>
 
-
             <div>
 
-                <h3>
+                <h3 class="job-title">
                     Ejecutivo de Ventas y Atención al Cliente
                 </h3>
 
-                <div class="company">
+                <div class="job-company">
                     Select Insurance · Empresa estadounidense
                 </div>
 
-
-                <ul>
+                <ul class="job-list">
 
                     <li>
-                        Atención directa a clientes interesados en seguros
-                        de automóvil e identificación de necesidades.
+                        Atención directa a clientes interesados
+                        en seguros de automóvil e identificación
+                        de necesidades.
                     </li>
 
                     <li>
-                        Asesoría durante el proceso de compra, elaboración
-                        de cotizaciones y ventas en tiempo real.
+                        Asesoría durante el proceso de compra,
+                        elaboración de cotizaciones y ventas
+                        en tiempo real.
                     </li>
 
                     <li>
-                        Seguimiento de prospectos hasta concretar la venta
-                        y gestión de documentación de pólizas.
+                        Seguimiento de prospectos hasta concretar
+                        la venta y gestión de documentación
+                        de pólizas.
                     </li>
 
                     <li>
-                        Atención postventa, gestión de cobros mensuales
-                        y resolución de incidencias de cuentas.
+                        Atención postventa, gestión de cobros
+                        mensuales y resolución de incidencias.
                     </li>
 
                     <li>
-                        Cumplimiento de objetivos comerciales y seguimiento
-                        de oportunidades de venta.
+                        Cumplimiento de objetivos comerciales
+                        y seguimiento de oportunidades de venta.
                     </li>
 
                 </ul>
@@ -1216,31 +1338,29 @@ section{
         </article>
 
 
-        <!-- JOB 2 -->
 
         <article class="job reveal">
 
-            <div class="job-meta">
+            <div class="job-date">
                 2022 — 2023
             </div>
 
-
             <div>
 
-                <h3>
-                    Community Manager / Generación de Prospectos
+                <h3 class="job-title">
+                    Community Manager /
+                    Generación de Prospectos
                 </h3>
 
-                <div class="company">
+                <div class="job-company">
                     Empresa estadounidense · Venta de automóviles
                 </div>
 
-
-                <ul>
+                <ul class="job-list">
 
                     <li>
-                        Gestión de comunicación con clientes potenciales
-                        a través de redes sociales.
+                        Gestión de comunicación con clientes
+                        potenciales a través de redes sociales.
                     </li>
 
                     <li>
@@ -1249,18 +1369,18 @@ section{
                     </li>
 
                     <li>
-                        Atención de mensajes, seguimiento de interesados
-                        e identificación de necesidades.
+                        Atención de mensajes y seguimiento
+                        de interesados.
                     </li>
 
                     <li>
-                        Calificación de prospectos para determinar su
+                        Calificación de prospectos para determinar
                         interés y perfil de compra.
                     </li>
 
                     <li>
-                        Coordinación y agendamiento de citas en tienda
-                        física para incrementar conversiones.
+                        Coordinación y agendamiento de citas
+                        en tienda física.
                     </li>
 
                 </ul>
@@ -1270,41 +1390,38 @@ section{
         </article>
 
 
-        <!-- JOB 3 -->
 
         <article class="job reveal">
 
-            <div class="job-meta">
+            <div class="job-date">
                 2025 — Actualidad
             </div>
 
-
             <div>
 
-                <h3>
+                <h3 class="job-title">
                     Gerente Operativo de Rancho de Engorda
                 </h3>
 
-                <div class="company">
+                <div class="job-company">
                     Agroindustrias del Caribe
                 </div>
 
-
-                <ul>
+                <ul class="job-list">
 
                     <li>
-                        Liderazgo de personal y coordinación de las
-                        actividades diarias de la operación.
+                        Liderazgo de personal y coordinación
+                        de actividades diarias.
                     </li>
 
                     <li>
-                        Atención a proveedores, administración de insumos
-                        y control de recursos.
+                        Atención a proveedores, administración
+                        de insumos y control de recursos.
                     </li>
 
                     <li>
-                        Responsabilidad sobre los resultados operativos
-                        y el funcionamiento del rancho.
+                        Responsabilidad sobre resultados
+                        operativos y funcionamiento del rancho.
                     </li>
 
                 </ul>
@@ -1319,75 +1436,79 @@ section{
 </section>
 
 
-<!-- =========================
+
+<!-- ======================================
      COMPETENCIAS
-========================= -->
+======================================= -->
 
 <section>
 
-    <div class="skills reveal">
-
+    <div class="skills-section reveal">
 
         <div>
 
-            <div class="section-label">
+            <div class="label">
                 03 / Competencias
             </div>
 
-            <h2>
-                Habilidades que hacen la diferencia.
+            <h2 class="skills-title">
+                Habilidades
+                <br>
+                que hacen
+                <br>
+                la diferencia.
             </h2>
 
         </div>
 
 
-        <div class="skill-grid">
+        <div class="skills">
 
-            <span class="pill">
+            <span class="skill">
                 Ventas y cierre comercial
             </span>
 
-            <span class="pill">
+            <span class="skill">
                 Atención al cliente
             </span>
 
-            <span class="pill">
+            <span class="skill">
                 Comunicación efectiva
             </span>
 
-            <span class="pill">
+            <span class="skill">
                 Generación de prospectos
             </span>
 
-            <span class="pill">
+            <span class="skill">
                 Servicio postventa
             </span>
 
-            <span class="pill">
+            <span class="skill">
                 Redes sociales
             </span>
 
-            <span class="pill">
+            <span class="skill">
                 Seguimiento de clientes
             </span>
 
-            <span class="pill">
+            <span class="skill">
                 Negociación
             </span>
 
-            <span class="pill">
+            <span class="skill">
                 Resolución de problemas
             </span>
 
-            <span class="pill">
+            <span class="skill">
                 Orientación a resultados
             </span>
 
-            <span class="pill">
+            <span class="skill">
                 Facilidad de palabra
             </span>
 
-            <span class="pill">
+            <span class="skill">
                 Representación de marca
             </span>
 
@@ -1398,35 +1519,43 @@ section{
 </section>
 
 
-<!-- =========================
+
+<!-- ======================================
      ALBUM
-========================= -->
+======================================= -->
 
-<section class="album" id="album">
+<section
+    class="album"
+    id="album"
+>
 
-
-    <div class="album-intro reveal">
+    <div class="album-header reveal">
 
         <div>
 
-            <div class="section-label">
+            <div class="label">
                 04 / Álbum
             </div>
 
-            <h2>
-                Más allá del
+            <h2 class="album-title">
+                Más allá
                 <br>
-                currículum.
+                del CV.
             </h2>
 
         </div>
 
 
-        <p class="album-note">
+        <p class="album-description">
 
-            Una selección visual para conocer también la personalidad,
-            presencia y naturalidad de Joshua frente a cámara y en
-            distintos entornos.
+            Una selección visual que muestra
+            diferentes facetas, presencia y
+            naturalidad de Joshua.
+
+            <br><br>
+
+            Haz clic sobre cualquier fotografía
+            para verla en pantalla completa.
 
         </p>
 
@@ -1436,145 +1565,297 @@ section{
     <div class="gallery">
 
 
-        <!-- IMAGEN 1 -->
+        <!-- 1 -->
 
-        <figure class="g1 reveal">
+        <figure
+            class="photo photo-1 reveal"
+            data-image="1.jpg"
+        >
 
             <img
-                src="1.jpg"
-                alt="Joshua Castillo Medina"
+                src="./1.jpg"
+                alt="Joshua Castillo Medina — fotografía 1"
+                loading="eager"
             >
 
-            <span class="caption">
-                01 — Portrait
+            <div class="image-error">
+
+                <strong>
+                    No se encontró 1.jpg
+                </strong>
+
+                <span>
+                    Coloca 1.jpg junto a index.html
+                </span>
+
+            </div>
+
+            <span class="photo-number">
+                01
             </span>
 
         </figure>
 
 
-        <!-- IMAGEN 2 -->
 
-        <figure class="g2 reveal">
+        <!-- 2 -->
+
+        <figure
+            class="photo photo-2 reveal"
+            data-image="2.jpg"
+        >
 
             <img
-                src="2.jpg"
-                alt="Joshua Castillo Medina"
+                src="./2.jpg"
+                alt="Joshua Castillo Medina — fotografía 2"
+                loading="lazy"
             >
 
-            <span class="caption">
-                02 — Portrait
+            <div class="image-error">
+
+                <strong>
+                    No se encontró 2.jpg
+                </strong>
+
+                <span>
+                    Coloca 2.jpg junto a index.html
+                </span>
+
+            </div>
+
+            <span class="photo-number">
+                02
             </span>
 
         </figure>
 
 
-        <!-- IMAGEN 3 -->
 
-        <figure class="g3 reveal">
+        <!-- 3 -->
+
+        <figure
+            class="photo photo-3 reveal"
+            data-image="3.jpg"
+        >
 
             <img
-                src="3.jpg"
-                alt="Joshua Castillo Medina"
+                src="./3.jpg"
+                alt="Joshua Castillo Medina — fotografía 3"
+                loading="lazy"
             >
 
-            <span class="caption">
-                03 — Style
+            <div class="image-error">
+
+                <strong>
+                    No se encontró 3.jpg
+                </strong>
+
+                <span>
+                    Coloca 3.jpg junto a index.html
+                </span>
+
+            </div>
+
+            <span class="photo-number">
+                03
             </span>
 
         </figure>
 
 
-        <!-- IMAGEN 4 -->
 
-        <figure class="g4 reveal">
+        <!-- 4 -->
+
+        <figure
+            class="photo photo-4 reveal"
+            data-image="4.jpg"
+        >
 
             <img
-                src="4.jpg"
-                alt="Joshua Castillo Medina"
+                src="./4.jpg"
+                alt="Joshua Castillo Medina — fotografía 4"
+                loading="lazy"
             >
 
-            <span class="caption">
-                04 — Lifestyle
+            <div class="image-error">
+
+                <strong>
+                    No se encontró 4.jpg
+                </strong>
+
+                <span>
+                    Coloca 4.jpg junto a index.html
+                </span>
+
+            </div>
+
+            <span class="photo-number">
+                04
             </span>
 
         </figure>
 
 
-        <!-- IMAGEN 5 -->
 
-        <figure class="g5 reveal">
+        <!-- 5 -->
+
+        <figure
+            class="photo photo-5 reveal"
+            data-image="5.jpg"
+        >
 
             <img
-                src="5.jpg"
-                alt="Joshua Castillo Medina"
+                src="./5.jpg"
+                alt="Joshua Castillo Medina — fotografía 5"
+                loading="lazy"
             >
 
-            <span class="caption">
-                05 — Travel
+            <div class="image-error">
+
+                <strong>
+                    No se encontró 5.jpg
+                </strong>
+
+                <span>
+                    Coloca 5.jpg junto a index.html
+                </span>
+
+            </div>
+
+            <span class="photo-number">
+                05
             </span>
 
         </figure>
 
 
-        <!-- IMAGEN 6 -->
 
-        <figure class="g6 reveal">
+        <!-- 6 -->
+
+        <figure
+            class="photo photo-6 reveal"
+            data-image="6.jpg"
+        >
 
             <img
-                src="6.jpg"
-                alt="Joshua Castillo Medina"
+                src="./6.jpg"
+                alt="Joshua Castillo Medina — fotografía 6"
+                loading="lazy"
             >
 
-            <span class="caption">
-                06 — Portrait
+            <div class="image-error">
+
+                <strong>
+                    No se encontró 6.jpg
+                </strong>
+
+                <span>
+                    Coloca 6.jpg junto a index.html
+                </span>
+
+            </div>
+
+            <span class="photo-number">
+                06
             </span>
 
         </figure>
 
 
-        <!-- IMAGEN 7 -->
 
-        <figure class="g7 reveal">
+        <!-- 7 -->
+
+        <figure
+            class="photo photo-7 reveal"
+            data-image="7.jpg"
+        >
 
             <img
-                src="7.jpg"
-                alt="Joshua Castillo Medina"
+                src="./7.jpg"
+                alt="Joshua Castillo Medina — fotografía 7"
+                loading="lazy"
             >
 
-            <span class="caption">
-                07 — Lifestyle
+            <div class="image-error">
+
+                <strong>
+                    No se encontró 7.jpg
+                </strong>
+
+                <span>
+                    Coloca 7.jpg junto a index.html
+                </span>
+
+            </div>
+
+            <span class="photo-number">
+                07
             </span>
 
         </figure>
 
 
-        <!-- IMAGEN 8 -->
 
-        <figure class="g8 reveal">
+        <!-- 8 -->
+
+        <figure
+            class="photo photo-8 reveal"
+            data-image="8.jpg"
+        >
 
             <img
-                src="8.jpg"
-                alt="Joshua Castillo Medina"
+                src="./8.jpg"
+                alt="Joshua Castillo Medina — fotografía 8"
+                loading="lazy"
             >
 
-            <span class="caption">
-                08 — Portrait
+            <div class="image-error">
+
+                <strong>
+                    No se encontró 8.jpg
+                </strong>
+
+                <span>
+                    Coloca 8.jpg junto a index.html
+                </span>
+
+            </div>
+
+            <span class="photo-number">
+                08
             </span>
 
         </figure>
 
 
-        <!-- IMAGEN 9 -->
 
-        <figure class="g9 reveal">
+        <!-- 9 -->
+
+        <figure
+            class="photo photo-9 reveal"
+            data-image="9.jpg"
+        >
 
             <img
-                src="9.jpg"
-                alt="Joshua Castillo Medina"
+                src="./9.jpg"
+                alt="Joshua Castillo Medina — fotografía 9"
+                loading="lazy"
             >
 
-            <span class="caption">
-                09 — Portrait
+            <div class="image-error">
+
+                <strong>
+                    No se encontró 9.jpg
+                </strong>
+
+                <span>
+                    Coloca 9.jpg junto a index.html
+                </span>
+
+            </div>
+
+            <span class="photo-number">
+                09
             </span>
 
         </figure>
@@ -1585,28 +1866,25 @@ section{
 </section>
 
 
-<!-- =========================
-     FORMACIÓN
-========================= -->
+
+<!-- ======================================
+     EDUCATION
+======================================= -->
 
 <section class="education">
 
-
     <div class="reveal">
 
-        <div class="section-label">
+        <div class="label">
             05 / Formación
         </div>
 
-        <h2
-            style="
-            font-family:'Playfair Display',serif;
-            font-size:clamp(40px,5vw,70px);
-            font-weight:500;
-            line-height:1;
-            "
-        >
-            Formación y datos adicionales.
+        <h2 class="education-title">
+            Formación
+            <br>
+            y datos
+            <br>
+            adicionales.
         </h2>
 
     </div>
@@ -1614,15 +1892,16 @@ section{
 
     <div>
 
-
         <div class="education-card reveal">
 
             <h3>
-                Licenciatura en Administración Ganadera
+                Licenciatura en
+                Administración Ganadera
             </h3>
 
             <p>
-                Instituto Universitario Eloísa Patrón de Rosado
+                Instituto Universitario
+                Eloísa Patrón de Rosado
             </p>
 
         </div>
@@ -1633,51 +1912,62 @@ section{
             style="margin-top:35px"
         >
 
-            <div
-                class="section-label"
-                style="margin-bottom:14px"
-            >
-                Información
-            </div>
-
             <p>
-                Disponible para reubicación · Licencia de conducir
-                · Español · Inglés
+                <strong>
+                    Ubicación:
+                </strong>
+
+                Cancún, Quintana Roo
             </p>
 
-            <p
-                style="
-                margin-top:15px;
-                color:var(--muted);
-                "
-            >
-                Experiencia trabajando con empresas estadounidenses
-                en entornos de ventas y servicio. Disponibilidad inmediata,
-                actitud de servicio y fuerte orientación a resultados.
+            <p>
+                <strong>
+                    Disponibilidad:
+                </strong>
+
+                Disponible para reubicación
+            </p>
+
+            <p>
+                <strong>
+                    Idiomas:
+                </strong>
+
+                Español · Inglés
+            </p>
+
+            <p>
+                <strong>
+                    Licencia:
+                </strong>
+
+                Licencia de conducir
             </p>
 
         </div>
-
 
     </div>
 
 </section>
 
 
-<!-- =========================
+
+<!-- ======================================
      CONTACTO
-========================= -->
+======================================= -->
 
-<section class="contact" id="contacto">
-
+<section
+    class="contact"
+    id="contacto"
+>
 
     <div class="reveal">
 
-        <div class="section-label">
+        <div class="label">
             06 / Contacto
         </div>
 
-        <h2>
+        <h2 class="contact-title">
             Hablemos de
             <br>
             lo que sigue.
@@ -1686,10 +1976,9 @@ section{
     </div>
 
 
-    <div class="contact-row reveal">
+    <div class="contact-bottom reveal">
 
-
-        <div class="contact-info">
+        <div class="contact-data">
 
             <span class="contact-label">
                 Ubicación
@@ -1700,10 +1989,7 @@ section{
             </span>
 
 
-            <span
-                class="contact-label"
-                style="margin-top:15px"
-            >
+            <span class="contact-label">
                 Disponibilidad
             </span>
 
@@ -1715,24 +2001,24 @@ section{
 
 
         <a
-            class="cv-btn"
-            href="CV_Joshua_Castillo_Medina.pdf"
+            href="./CV_Joshua_Castillo_Medina.pdf"
             target="_blank"
+            class="pdf-button"
         >
             Abrir CV completo ↗
         </a>
-
 
     </div>
 
 </section>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
 
-<footer class="footer">
+<!-- ======================================
+     FOOTER
+======================================= -->
+
+<footer>
 
     <span>
         Joshua Castillo Medina
@@ -1745,9 +2031,10 @@ section{
 </footer>
 
 
-<!-- =========================
+
+<!-- ======================================
      LIGHTBOX
-========================= -->
+======================================= -->
 
 <div
     class="lightbox"
@@ -1756,30 +2043,30 @@ section{
 
     <button
         class="close"
-        aria-label="Cerrar"
+        id="closeLightbox"
     >
         ×
     </button>
 
 
     <button
-        class="prev"
-        aria-label="Anterior"
+        class="arrow arrow-left"
+        id="previous"
     >
         ‹
     </button>
 
 
     <img
-        id="lightboxImg"
+        id="lightboxImage"
         src=""
         alt=""
     >
 
 
     <button
-        class="next"
-        aria-label="Siguiente"
+        class="arrow arrow-right"
+        id="next"
     >
         ›
     </button>
@@ -1787,63 +2074,82 @@ section{
 </div>
 
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
 
 <script>
 
 
-/* =========================
-   SCROLL REVEAL
-========================= */
+/* ======================================
+   VERIFICAR IMÁGENES
+======================================= */
 
-const reveals =
-    document.querySelectorAll('.reveal');
+const images = document.querySelectorAll(
+    '.photo img'
+);
 
 
-const observer =
-    new IntersectionObserver(
+images.forEach(function(image){
 
-        entries => {
+    image.addEventListener(
+        'error',
+        function(){
 
-            entries.forEach(entry => {
+            const parent =
+                image.closest('.photo');
 
-                if(entry.isIntersecting){
+            image.style.display = 'none';
 
-                    entry.target.classList.add('visible');
+            const error =
+                parent.querySelector(
+                    '.image-error'
+                );
 
-                }
+            error.style.display = 'flex';
 
-            });
-
-        },
-
-        {
-            threshold:.12
         }
-
     );
-
-
-reveals.forEach(element => {
-
-    observer.observe(element);
 
 });
 
 
 
-/* =========================
-   LIGHTBOX
-========================= */
+/* ======================================
+   HERO IMAGE
+======================================= */
 
-const figures =
-    [
-        ...document.querySelectorAll(
-            '.gallery figure'
+const heroImage =
+    document.getElementById(
+        'heroImage'
+    );
+
+
+const heroTest =
+    new Image();
+
+
+heroTest.src =
+    './1.jpg';
+
+
+heroTest.onerror =
+    function(){
+
+        heroImage.style.backgroundImage =
+            'none';
+
+    };
+
+
+
+/* ======================================
+   LIGHTBOX
+======================================= */
+
+const photos =
+    Array.from(
+        document.querySelectorAll(
+            '.photo img'
         )
-    ];
+    );
 
 
 const lightbox =
@@ -1854,50 +2160,88 @@ const lightbox =
 
 const lightboxImage =
     document.getElementById(
-        'lightboxImg'
+        'lightboxImage'
     );
 
 
-let currentIndex = 0;
+let current =
+    0;
 
 
 
-function showImage(index){
+function openLightbox(index){
 
-    currentIndex =
-        (index + figures.length)
-        % figures.length;
-
-
-    const image =
-        figures[currentIndex]
-        .querySelector('img');
-
+    current = index;
 
     lightboxImage.src =
-        image.src;
-
+        photos[current].src;
 
     lightboxImage.alt =
-        image.alt;
+        photos[current].alt;
 
-
-    lightbox.classList.add('open');
+    lightbox.classList.add(
+        'active'
+    );
 
 }
 
 
 
-/* Abrir imagen */
+function closeLightbox(){
 
-figures.forEach(
-    (figure,index) => {
+    lightbox.classList.remove(
+        'active'
+    );
 
-        figure.addEventListener(
+}
+
+
+
+function previousImage(){
+
+    current--;
+
+    if(current < 0){
+
+        current =
+            photos.length - 1;
+
+    }
+
+    lightboxImage.src =
+        photos[current].src;
+
+}
+
+
+
+function nextImage(){
+
+    current++;
+
+    if(current >= photos.length){
+
+        current = 0;
+
+    }
+
+    lightboxImage.src =
+        photos[current].src;
+
+}
+
+
+
+/* Abrir */
+
+photos.forEach(
+    function(photo,index){
+
+        photo.parentElement.addEventListener(
             'click',
-            () => {
+            function(){
 
-                showImage(index);
+                openLightbox(index);
 
             }
         );
@@ -1907,70 +2251,50 @@ figures.forEach(
 
 
 
-/* Cerrar */
+/* Botones */
 
 document
-    .querySelector('.close')
+    .getElementById(
+        'closeLightbox'
+    )
     .addEventListener(
         'click',
-        () => {
+        closeLightbox
+    );
 
-            lightbox.classList.remove(
-                'open'
-            );
 
-        }
+document
+    .getElementById(
+        'previous'
+    )
+    .addEventListener(
+        'click',
+        previousImage
+    );
+
+
+document
+    .getElementById(
+        'next'
+    )
+    .addEventListener(
+        'click',
+        nextImage
     );
 
 
 
-/* Anterior */
-
-document
-    .querySelector('.prev')
-    .addEventListener(
-        'click',
-        () => {
-
-            showImage(
-                currentIndex - 1
-            );
-
-        }
-    );
-
-
-
-/* Siguiente */
-
-document
-    .querySelector('.next')
-    .addEventListener(
-        'click',
-        () => {
-
-            showImage(
-                currentIndex + 1
-            );
-
-        }
-    );
-
-
-
-/* Cerrar haciendo click fuera */
+/* Click fuera */
 
 lightbox.addEventListener(
     'click',
-    event => {
+    function(event){
 
         if(
             event.target === lightbox
         ){
 
-            lightbox.classList.remove(
-                'open'
-            );
+            closeLightbox();
 
         }
 
@@ -1983,11 +2307,11 @@ lightbox.addEventListener(
 
 document.addEventListener(
     'keydown',
-    event => {
+    function(event){
 
         if(
             !lightbox.classList.contains(
-                'open'
+                'active'
             )
         ){
 
@@ -1996,31 +2320,80 @@ document.addEventListener(
         }
 
 
-        if(event.key === 'Escape'){
+        if(
+            event.key === 'Escape'
+        ){
 
-            lightbox.classList.remove(
-                'open'
-            );
-
-        }
-
-
-        if(event.key === 'ArrowLeft'){
-
-            showImage(
-                currentIndex - 1
-            );
+            closeLightbox();
 
         }
 
 
-        if(event.key === 'ArrowRight'){
+        if(
+            event.key === 'ArrowLeft'
+        ){
 
-            showImage(
-                currentIndex + 1
-            );
+            previousImage();
 
         }
+
+
+        if(
+            event.key === 'ArrowRight'
+        ){
+
+            nextImage();
+
+        }
+
+    }
+);
+
+
+
+/* ======================================
+   SCROLL REVEAL
+======================================= */
+
+const revealElements =
+    document.querySelectorAll(
+        '.reveal'
+    );
+
+
+const revealObserver =
+    new IntersectionObserver(
+        function(entries){
+
+            entries.forEach(
+                function(entry){
+
+                    if(
+                        entry.isIntersecting
+                    ){
+
+                        entry.target.classList.add(
+                            'show'
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold:.08
+        }
+    );
+
+
+revealElements.forEach(
+    function(element){
+
+        revealObserver.observe(
+            element
+        );
 
     }
 );

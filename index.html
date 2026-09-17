@@ -1,3097 +1,2045 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+
+    <meta name="theme-color" content="#101416">
+
+    <meta name="description"
+          content="Joshua Castillo Medina — Embajador de Marca, Ventas, Atención al Cliente y Community Management.">
+
+    <title>Joshua Castillo Medina | Perfil Profesional</title>
+
+    <style>
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #101416;
+            color: #f4f1eb;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =========================================================
+           VARIABLES
+        ========================================================= */
+
+        :root {
+            --bg: #101416;
+            --bg-soft: #171d1f;
+            --bg-card: #1b2224;
+            --gold: #b99a62;
+            --gold-light: #d0b37b;
+            --cream: #f4f1eb;
+            --text: #d9d8d3;
+            --muted: #929896;
+            --line: rgba(255,255,255,.12);
+            --max-width: 1180px;
+        }
+
+
+        /* =========================================================
+           NAVBAR
+        ========================================================= */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 68px;
+            z-index: 1000;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 6%;
+
+            background: rgba(12,16,17,.72);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+
+        .nav-logo {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ddd;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: .3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+
 
-<meta charset="UTF-8">
+        /* =========================================================
+           HERO
+        ========================================================= */
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100svh;
+            min-height: 650px;
 
-<title>Joshua Castillo Medina | Embajador de Marca</title>
+            overflow: hidden;
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            display: flex;
+            align-items: flex-end;
+        }
 
-<link
-href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
-rel="stylesheet">
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
 
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            display: block;
 
-<style>
+            object-fit: cover;
+            object-position: center center;
 
-/* =====================================================
-   VARIABLES
-===================================================== */
+            transform: scale(1.01);
+        }
 
-:root{
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
 
-    --black:#111311;
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(5,8,9,.92) 0%,
+                    rgba(5,8,9,.55) 35%,
+                    rgba(5,8,9,.15) 65%,
+                    rgba(5,8,9,.20) 100%
+                );
+        }
 
-    --cream:#f3efe8;
+        .hero-content {
+            position: relative;
+            z-index: 2;
 
-    --cream2:#e8e0d4;
+            width: 100%;
+            max-width: var(--max-width);
 
-    --white:#fffdf9;
+            margin: 0 auto;
 
-    --gray:#70736e;
+            padding:
+                0 6%
+                max(50px, env(safe-area-inset-bottom))
+                6%;
+        }
 
-    --gold:#b39261;
+        .hero-small {
+            display: block;
 
-    --line:rgba(17,19,17,.14);
+            margin-bottom: 10px;
 
-}
+            color: var(--gold-light);
 
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
 
-/* =====================================================
-   RESET
-===================================================== */
+        .hero h1 {
+            max-width: 900px;
 
-*{
+            font-family: Georgia, "Times New Roman", serif;
 
-    margin:0;
+            font-size: clamp(48px, 9vw, 105px);
+            font-weight: 400;
+            line-height: .94;
 
-    padding:0;
+            letter-spacing: -3px;
+        }
 
-    box-sizing:border-box;
+        .hero-title {
+            margin-top: 22px;
 
-}
+            font-size: clamp(14px, 2vw, 20px);
+            letter-spacing: 3px;
+            text-transform: uppercase;
 
+            color: #e7e4dd;
+        }
 
-html{
+        .hero-line {
+            width: 70px;
+            height: 1px;
 
-    scroll-behavior:smooth;
+            margin-top: 28px;
 
-}
+            background: var(--gold);
+        }
 
 
-body{
+        /* =========================================================
+           MAIN
+        ========================================================= */
 
-    background:var(--cream);
+        main {
+            position: relative;
+            z-index: 2;
+            background: var(--bg);
+        }
 
-    color:var(--black);
+        .section {
+            width: 100%;
+            max-width: var(--max-width);
 
-    font-family:'DM Sans',sans-serif;
+            margin: 0 auto;
 
-    overflow-x:hidden;
+            padding: 90px 6%;
+        }
 
-}
+        .section-label {
+            display: block;
 
+            margin-bottom: 13px;
 
-a{
+            color: var(--gold-light);
 
-    color:inherit;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
 
-    text-decoration:none;
+        .section-title {
+            font-family: Georgia, "Times New Roman", serif;
 
-}
+            font-size: clamp(34px, 5vw, 58px);
+            font-weight: 400;
+            line-height: 1.05;
 
+            margin-bottom: 28px;
+        }
 
-img{
+        .section-text {
+            max-width: 800px;
 
-    display:block;
+            color: var(--text);
 
-    width:100%;
+            font-size: 16px;
+            line-height: 1.9;
+        }
 
-}
 
+        /* =========================================================
+           INTRO / PROFILE
+        ========================================================= */
 
-/* =====================================================
-   NAV
-===================================================== */
+        .intro {
+            background: var(--bg);
+        }
 
-.nav{
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: start;
+        }
 
-    position:fixed;
+        .intro-side {
+            padding-top: 8px;
+        }
 
-    top:0;
+        .intro-side-item {
+            padding: 22px 0;
+            border-top: 1px solid var(--line);
+        }
 
-    left:0;
+        .intro-side-item:last-child {
+            border-bottom: 1px solid var(--line);
+        }
 
-    width:100%;
+        .intro-side-label {
+            display: block;
 
-    z-index:1000;
+            margin-bottom: 6px;
 
-    display:flex;
+            color: var(--muted);
 
-    justify-content:space-between;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
 
-    align-items:center;
+        .intro-side-value {
+            color: var(--cream);
+            font-size: 15px;
+        }
 
-    padding:25px 6vw;
 
-    color:white;
+        /* =========================================================
+           COMPETENCIES
+        ========================================================= */
 
-    mix-blend-mode:difference;
+        .competencies {
+            background: var(--bg-soft);
+        }
 
-}
+        .competency-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
 
+            border-top: 1px solid var(--line);
+            border-left: 1px solid var(--line);
+        }
 
-.logo{
+        .competency {
+            min-height: 120px;
 
-    font-size:13px;
+            padding: 25px;
 
-    font-weight:700;
+            display: flex;
+            align-items: flex-end;
 
-    letter-spacing:.25em;
+            border-right: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
 
-}
+            transition: background .3s ease;
+        }
 
+        .competency:hover {
+            background: rgba(255,255,255,.03);
+        }
 
-.nav-menu{
+        .competency-number {
+            display: block;
 
-    display:flex;
+            margin-bottom: 8px;
 
-    gap:30px;
+            color: var(--gold);
 
-}
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
 
+        .competency-text {
+            font-size: 14px;
+            font-weight: 500;
+            color: #eee;
+        }
 
-.nav-menu a{
 
-    font-size:11px;
+        /* =========================================================
+           EXPERIENCE
+        ========================================================= */
 
-    text-transform:uppercase;
+        .experience {
+            background: var(--bg);
+        }
 
-    letter-spacing:.15em;
+        .experience-list {
+            border-top: 1px solid var(--line);
+        }
 
-    transition:.3s;
+        .experience-item {
+            display: grid;
+            grid-template-columns: 190px 1fr;
 
-}
+            gap: 50px;
 
+            padding: 45px 0;
 
-.nav-menu a:hover{
+            border-bottom: 1px solid var(--line);
+        }
 
-    opacity:.55;
+        .experience-date {
+            color: var(--gold-light);
 
-}
+            font-size: 12px;
+            font-weight: 700;
 
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
 
-/* =====================================================
-   PORTADA
-   ESTA ES LA PORTADA ORIGINAL:
-   FOTO 1 DE FONDO + NOMBRE ENCIMA
-===================================================== */
+        .experience-role {
+            margin-bottom: 6px;
 
-.hero{
+            font-family: Georgia, "Times New Roman", serif;
 
-    position:relative;
+            font-size: 28px;
+            font-weight: 400;
+            line-height: 1.15;
+        }
 
-    min-height:100vh;
+        .experience-company {
+            margin-bottom: 20px;
 
-    min-height:100svh;
+            color: var(--gold-light);
 
-    display:flex;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
 
-    align-items:flex-end;
+        .experience-description {
+            color: var(--text);
 
-    overflow:hidden;
+            font-size: 15px;
+            line-height: 1.85;
+        }
 
-    background:#171717;
 
-    color:white;
+        /* =========================================================
+           EDUCATION
+        ========================================================= */
 
-}
+        .education {
+            background: var(--bg-soft);
+        }
 
+        .education-box {
+            padding: 38px;
 
-/* Imagen completa de portada */
+            border: 1px solid var(--line);
 
-.hero-image{
+            background: rgba(255,255,255,.015);
+        }
 
-    position:absolute;
+        .education-degree {
+            margin-bottom: 10px;
 
-    inset:0;
+            font-family: Georgia, "Times New Roman", serif;
 
-    z-index:0;
+            font-size: 29px;
+            line-height: 1.2;
+        }
 
-    background-image:url("1.jpg");
+        .education-school {
+            color: var(--gold-light);
 
-    background-position:center center;
+            font-size: 14px;
+        }
 
-    background-size:cover;
 
-    background-repeat:no-repeat;
+        /* =========================================================
+           ADDITIONAL
+        ========================================================= */
 
-}
+        .additional {
+            background: var(--bg);
+        }
 
+        .additional-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
 
-/* Oscurecimiento elegante */
+            gap: 1px;
 
-.hero-image::after{
+            background: var(--line);
 
-    content:"";
+            border: 1px solid var(--line);
+        }
 
-    position:absolute;
+        .additional-item {
+            padding: 30px;
 
-    inset:0;
+            background: var(--bg);
+        }
 
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,.08),
-            rgba(0,0,0,.12) 35%,
-            rgba(0,0,0,.78)
-        );
+        .additional-item h3 {
+            margin-bottom: 9px;
 
-}
+            font-size: 14px;
+            font-weight: 600;
+        }
 
+        .additional-item p {
+            color: var(--muted);
 
-/* Contenido sobre la fotografía */
+            font-size: 14px;
+            line-height: 1.7;
+        }
 
-.hero-content{
 
-    position:relative;
+        /* =========================================================
+           GALERÍA
+           IMPORTANTE:
+           ESTA SECCIÓN ES COMPLETAMENTE INDEPENDIENTE
+           DEL CV PARA EVITAR QUE LAS IMÁGENES SE ENCIMEN.
+        ========================================================= */
 
-    z-index:2;
+        .gallery-section {
+            width: 100%;
 
-    width:100%;
+            padding: 100px 0;
 
-    padding:
-        0
-        7vw
-        8vh;
+            background: #0b0f10;
+        }
 
-}
+        .gallery-header {
+            width: 100%;
+            max-width: var(--max-width);
 
+            margin: 0 auto;
 
-.small-title{
+            padding: 0 6% 45px;
+        }
 
-    font-size:11px;
+        .gallery-header h2 {
+            font-family: Georgia, "Times New Roman", serif;
 
-    text-transform:uppercase;
+            font-size: clamp(38px, 6vw, 65px);
+            font-weight: 400;
 
-    letter-spacing:.3em;
+            line-height: 1;
+        }
 
-    margin-bottom:22px;
+        .gallery-header p {
+            max-width: 650px;
 
-    color:#dedede;
+            margin-top: 18px;
 
-}
+            color: var(--muted);
 
+            font-size: 14px;
+            line-height: 1.8;
+        }
 
-.hero h1{
+        .gallery {
+            width: 100%;
+            max-width: 1400px;
 
-    font-family:'Playfair Display',serif;
+            margin: 0 auto;
 
-    font-weight:500;
+            padding: 0 3%;
 
-    font-size:
-        clamp(
-            60px,
-            11vw,
-            160px
-        );
+            display: grid;
 
-    line-height:.82;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
 
-    letter-spacing:-.055em;
+            gap: 14px;
+        }
 
-}
+        .photo {
+            position: relative;
 
+            width: 100%;
 
-.hero h1 span{
+            min-height: 520px;
 
-    display:block;
+            overflow: hidden;
 
-}
+            background: #161b1d;
+        }
 
+        .photo img {
+            position: static;
 
-.hero-info{
+            display: block;
 
-    margin-top:42px;
+            width: 100%;
+            height: 100%;
 
-    display:flex;
+            object-fit: cover;
 
-    justify-content:space-between;
+            transition:
+                transform .7s cubic-bezier(.2,.7,.2,1),
+                filter .5s ease;
+        }
 
-    align-items:end;
+        .photo:hover img {
+            transform: scale(1.035);
+        }
 
-    gap:30px;
+        /* Fotos grandes en desktop */
 
-}
+        .photo-wide {
+            grid-column: span 2;
+            min-height: 680px;
+        }
 
+        /* Alturas específicas */
 
-.role{
+        .photo-2,
+        .photo-3,
+        .photo-5,
+        .photo-6,
+        .photo-7,
+        .photo-9 {
+            min-height: 580px;
+        }
 
-    font-size:13px;
+        .photo-4 {
+            min-height: 650px;
+        }
 
-    text-transform:uppercase;
+        .photo-8 {
+            min-height: 680px;
+        }
 
-    letter-spacing:.08em;
+        /* Encuadre de la foto 7 */
 
-    line-height:1.8;
+        .photo-7 img {
+            object-position: center 38%;
+        }
 
-    color:#ddd;
+        /* Número de fotografía */
 
-}
+        .photo-number {
+            position: absolute;
 
+            top: 18px;
+            left: 18px;
 
-.hero-button{
+            z-index: 3;
 
-    border:1px solid rgba(255,255,255,.6);
+            width: 35px;
+            height: 35px;
 
-    padding:15px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    font-size:10px;
+            border: 1px solid rgba(255,255,255,.4);
 
-    text-transform:uppercase;
+            background: rgba(10,12,13,.45);
 
-    letter-spacing:.2em;
+            backdrop-filter: blur(8px);
 
-    transition:.3s;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
 
-}
 
+        /* =========================================================
+           CONTACT
+        ========================================================= */
 
-.hero-button:hover{
+        .contact {
+            background: var(--bg-soft);
 
-    background:white;
+            text-align: center;
+        }
 
-    color:black;
+        .contact-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-}
+        .contact-title {
+            font-family: Georgia, "Times New Roman", serif;
 
+            font-size: clamp(40px, 6vw, 72px);
+            font-weight: 400;
 
-/* =====================================================
-   GENERAL
-===================================================== */
+            line-height: 1;
+        }
 
-section{
+        .contact-text {
+            margin: 25px auto 35px;
 
-    padding:130px 7vw;
+            max-width: 600px;
 
-}
+            color: var(--muted);
 
+            font-size: 15px;
+        }
 
-.label{
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
 
-    font-size:10px;
+        .button {
+            display: inline-flex;
 
-    text-transform:uppercase;
+            align-items: center;
+            justify-content: center;
 
-    letter-spacing:.25em;
+            min-height: 48px;
 
-    color:var(--gray);
+            padding: 0 25px;
 
-    margin-bottom:28px;
+            border: 1px solid var(--gold);
 
-}
+            color: var(--cream);
 
+            font-size: 11px;
+            font-weight: 700;
 
-/* =====================================================
-   PERFIL
-===================================================== */
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
 
-.profile{
+            transition: .3s ease;
+        }
 
-    display:grid;
+        .button:hover {
+            background: var(--gold);
+            color: #111;
+        }
 
-    grid-template-columns:
-        minmax(250px,1fr)
-        minmax(300px,1.6fr);
 
-    gap:9vw;
+        /* =========================================================
+           FOOTER
+        ========================================================= */
 
-}
+        footer {
+            padding: 30px 6%;
 
+            border-top: 1px solid var(--line);
 
-.profile-title{
+            background: #0c1011;
 
-    font-family:'Playfair Display',serif;
+            text-align: center;
 
-    font-size:
-        clamp(
-            42px,
-            5vw,
-            72px
-        );
+            color: #747b79;
 
-    line-height:.98;
+            font-size: 10px;
 
-    font-weight:500;
+            letter-spacing: 1.5px;
 
-    letter-spacing:-.04em;
+            text-transform: uppercase;
+        }
 
-}
 
+        /* =========================================================
+           ANIMACIONES
+        ========================================================= */
 
-.profile-text{
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
 
-    max-width:700px;
+            animation: reveal .9s ease forwards;
+        }
 
-    font-size:18px;
+        @keyframes reveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    line-height:1.8;
 
-    color:#40433f;
+        /* =========================================================
+           TABLET
+        ========================================================= */
 
-}
+        @media (max-width: 900px) {
 
+            .intro-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
 
-.profile-text p+p{
+            .competency-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
 
-    margin-top:25px;
+            .experience-item {
+                grid-template-columns: 140px 1fr;
+                gap: 30px;
+            }
 
-}
+            .gallery {
+                padding: 0 3%;
+            }
 
+            .photo {
+                min-height: 450px;
+            }
 
-/* =====================================================
-   HIGHLIGHTS
-===================================================== */
+            .photo-wide {
+                min-height: 580px;
+            }
+        }
 
-.highlights{
 
-    margin-top:80px;
+        /* =========================================================
+           CELULAR
+        ========================================================= */
 
-    border-top:1px solid var(--line);
+        @media (max-width: 700px) {
 
-    border-bottom:1px solid var(--line);
+            body {
+                font-size: 15px;
+            }
 
-    display:grid;
+            /* NAV */
 
-    grid-template-columns:
-        repeat(3,1fr);
+            .navbar {
+                height: 58px;
+                padding: 0 20px;
+            }
 
-}
+            .nav-logo {
+                font-size: 10px;
+                letter-spacing: 1.5px;
+            }
 
+            .nav-links {
+                gap: 13px;
+            }
 
-.highlight{
+            .nav-links a {
+                font-size: 8px;
+                letter-spacing: .8px;
+            }
 
-    padding:30px;
 
-    border-right:1px solid var(--line);
+            /* HERO */
 
-}
+            .hero {
+                height: 100svh;
+                min-height: 620px;
+            }
 
+            .hero-content {
+                padding-left: 22px;
+                padding-right: 22px;
 
-.highlight:last-child{
+                padding-bottom:
+                    max(42px, env(safe-area-inset-bottom));
+            }
 
-    border-right:none;
+            .hero-small {
+                font-size: 9px;
+                letter-spacing: 2.5px;
+            }
 
-}
+            .hero h1 {
+                font-size: clamp(46px, 15vw, 70px);
 
+                letter-spacing: -2.5px;
+            }
 
-.highlight-number{
+            .hero-title {
+                max-width: 320px;
 
-    font-family:'Playfair Display',serif;
+                margin-top: 17px;
 
-    font-size:35px;
+                font-size: 10px;
+                line-height: 1.6;
 
-    margin-bottom:8px;
+                letter-spacing: 2px;
+            }
 
-}
+            .hero-line {
+                margin-top: 20px;
+            }
 
 
-.highlight-title{
+            /* SECCIONES */
 
-    font-size:10px;
+            .section {
+                padding: 70px 22px;
+            }
 
-    text-transform:uppercase;
+            .section-title {
+                font-size: 40px;
+            }
 
-    letter-spacing:.16em;
+            .section-text {
+                font-size: 14px;
+                line-height: 1.85;
+            }
 
-    color:var(--gray);
 
-}
+            /* COMPETENCIAS */
 
+            .competency-grid {
+                grid-template-columns: 1fr;
+            }
 
-/* =====================================================
-   EXPERIENCIA
-===================================================== */
+            .competency {
+                min-height: 95px;
+                padding: 20px;
+            }
 
-.experience{
+            .competency-text {
+                font-size: 13px;
+            }
 
-    background:var(--white);
 
-}
+            /* EXPERIENCIA */
 
+            .experience-item {
+                display: block;
 
-.timeline{
+                padding: 35px 0;
+            }
 
-    border-top:1px solid var(--line);
+            .experience-date {
+                margin-bottom: 13px;
 
-    margin-top:50px;
+                font-size: 10px;
+            }
 
-}
+            .experience-role {
+                font-size: 25px;
+            }
 
+            .experience-company {
+                font-size: 12px;
+            }
 
-.job{
+            .experience-description {
+                font-size: 14px;
+                line-height: 1.8;
+            }
 
-    display:grid;
 
-    grid-template-columns:
-        minmax(150px,1fr)
-        minmax(300px,2.5fr);
+            /* EDUCACIÓN */
 
-    gap:8vw;
+            .education-box {
+                padding: 25px;
+            }
 
-    padding:50px 0;
+            .education-degree {
+                font-size: 24px;
+            }
 
-    border-bottom:1px solid var(--line);
 
-}
+            /* ADICIONAL */
 
+            .additional-grid {
+                grid-template-columns: 1fr;
+            }
 
-.job-date{
+            .additional-item {
+                padding: 24px;
+            }
 
-    font-size:11px;
 
-    letter-spacing:.16em;
+            /* =====================================================
+               GALERÍA MOBILE
 
-    text-transform:uppercase;
+               UNA IMAGEN POR FILA.
+               NUNCA SE ENCIMA DEL TEXTO.
+            ===================================================== */
 
-    color:var(--gray);
+            .gallery-section {
+                padding: 75px 0;
+            }
 
-}
+            .gallery-header {
+                padding: 0 22px 32px;
+            }
 
+            .gallery-header h2 {
+                font-size: 43px;
+            }
 
-.job-title{
+            .gallery-header p {
+                font-size: 13px;
+            }
 
-    font-size:26px;
+            .gallery {
+                display: grid;
 
-    font-weight:600;
+                grid-template-columns: 1fr;
 
-    line-height:1.2;
+                gap: 10px;
 
-}
+                padding: 0 10px;
+            }
 
+            .photo,
+            .photo-wide,
+            .photo-2,
+            .photo-3,
+            .photo-4,
+            .photo-5,
+            .photo-6,
+            .photo-7,
+            .photo-8,
+            .photo-9 {
+                grid-column: span 1;
 
-.job-company{
+                width: 100%;
 
-    margin-top:7px;
+                min-height: 0;
 
-    color:var(--gold);
+                height: auto;
 
-    font-size:13px;
+                aspect-ratio: 4 / 5;
+            }
 
-    font-weight:600;
+            /* Fotos principales más altas */
 
-}
+            .photo-1,
+            .photo-4,
+            .photo-8 {
+                aspect-ratio: 4 / 5;
+            }
 
+            /* Imagen 7 */
 
-.job-list{
+            .photo-7 {
+                aspect-ratio: 4 / 5;
+            }
 
-    list-style:none;
+            .photo-7 img {
+                object-position: center 38%;
+            }
 
-    margin-top:24px;
 
-    color:#555852;
+            /* CONTACTO */
 
-    font-size:14px;
+            .contact-title {
+                font-size: 47px;
+            }
 
-}
+            .contact-text {
+                font-size: 14px;
+            }
 
+            .contact-buttons {
+                flex-direction: column;
+            }
 
-.job-list li{
+            .button {
+                width: 100%;
+            }
 
-    margin:9px 0;
 
-    padding-left:20px;
+            /* FOOTER */
 
-    position:relative;
+            footer {
+                padding: 25px 20px;
 
-}
+                font-size: 8px;
 
+                line-height: 1.7;
+            }
+        }
 
-.job-list li::before{
 
-    content:"—";
+        /* =========================================================
+           CELULAR MUY PEQUEÑO
+        ========================================================= */
 
-    position:absolute;
+        @media (max-width: 380px) {
 
-    left:0;
+            .nav-links {
+                gap: 8px;
+            }
 
-    color:var(--gold);
+            .nav-links a {
+                font-size: 7px;
+            }
 
-}
+            .hero h1 {
+                font-size: 43px;
+            }
 
+            .section-title {
+                font-size: 36px;
+            }
 
-/* =====================================================
-   COMPETENCIAS
-===================================================== */
+            .gallery-header h2 {
+                font-size: 39px;
+            }
+        }
 
-.skills-section{
 
-    display:grid;
+        /* =========================================================
+           REDUCE MOTION
+        ========================================================= */
 
-    grid-template-columns:
-        minmax(250px,1fr)
-        minmax(300px,2fr);
+        @media (prefers-reduced-motion: reduce) {
 
-    gap:8vw;
+            html {
+                scroll-behavior: auto;
+            }
 
-}
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+        }
 
-
-.skills-title{
-
-    font-family:'Playfair Display',serif;
-
-    font-size:
-        clamp(
-            42px,
-            5vw,
-            72px
-        );
-
-    line-height:.95;
-
-    font-weight:500;
-
-    letter-spacing:-.035em;
-
-}
-
-
-.skills{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:11px;
-
-    align-content:start;
-
-}
-
-
-.skill{
-
-    border:1px solid var(--line);
-
-    padding:13px 18px;
-
-    border-radius:100px;
-
-    font-size:12px;
-
-    transition:.25s;
-
-}
-
-
-.skill:hover{
-
-    background:var(--black);
-
-    color:white;
-
-    border-color:var(--black);
-
-    transform:translateY(-2px);
-
-}
-
-
-/* =====================================================
-   ALBUM
-   COMPLETAMENTE SEPARADO DEL TEXTO
-===================================================== */
-
-.album{
-
-    background:#151715;
-
-    color:white;
-
-    padding-left:6vw;
-
-    padding-right:6vw;
-
-}
-
-
-.album .label{
-
-    color:#969995;
-
-}
-
-
-.album-header{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:end;
-
-    gap:60px;
-
-    margin-bottom:60px;
-
-}
-
-
-.album-title{
-
-    font-family:'Playfair Display',serif;
-
-    font-size:
-        clamp(
-            50px,
-            7vw,
-            100px
-        );
-
-    line-height:.9;
-
-    font-weight:500;
-
-    letter-spacing:-.045em;
-
-}
-
-
-.album-description{
-
-    max-width:340px;
-
-    color:#a7aaa5;
-
-    font-size:14px;
-
-    line-height:1.7;
-
-}
-
-
-/* =====================================================
-   GALERÍA
-===================================================== */
-
-.gallery{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(2,minmax(0,1fr));
-
-    gap:22px;
-
-    width:100%;
-
-}
-
-
-/* Cada fotografía está dentro de su propio bloque */
-
-.photo{
-
-    position:relative;
-
-    width:100%;
-
-    overflow:hidden;
-
-    background:#252725;
-
-    cursor:pointer;
-
-}
-
-
-/* Tamaños */
-
-.photo-1{
-
-    grid-column:span 2;
-
-    aspect-ratio:16 / 9;
-
-}
-
-
-.photo-2,
-.photo-3,
-.photo-5,
-.photo-6,
-.photo-7,
-.photo-9{
-
-    aspect-ratio:4 / 5;
-
-}
-
-
-.photo-4{
-
-    grid-column:span 2;
-
-    aspect-ratio:16 / 9;
-
-}
-
-
-.photo-8{
-
-    grid-column:span 2;
-
-    aspect-ratio:16 / 9;
-
-}
-
-
-/* Imagen */
-
-.photo img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    object-position:center;
-
-    transition:
-        transform .8s
-        cubic-bezier(.2,.7,.2,1);
-
-}
-
-
-/* Zoom */
-
-.photo:hover img{
-
-    transform:scale(1.035);
-
-}
-
-
-/* Número */
-
-.photo-number{
-
-    position:absolute;
-
-    left:20px;
-
-    bottom:18px;
-
-    z-index:5;
-
-    font-size:10px;
-
-    letter-spacing:.18em;
-
-    color:white;
-
-    text-shadow:
-        0 1px 8px rgba(0,0,0,.7);
-
-}
-
-
-/* =====================================================
-   FOTO 7
-   Un poco más abajo para que no corte tanto
-===================================================== */
-
-.photo-7 img{
-
-    object-position:center 38%;
-
-}
-
-
-/* =====================================================
-   FORMACIÓN
-===================================================== */
-
-.education{
-
-    display:grid;
-
-    grid-template-columns:
-        minmax(250px,1fr)
-        minmax(300px,2fr);
-
-    gap:8vw;
-
-}
-
-
-.education-title{
-
-    font-family:'Playfair Display',serif;
-
-    font-size:
-        clamp(
-            42px,
-            5vw,
-            72px
-        );
-
-    line-height:.95;
-
-    font-weight:500;
-
-    letter-spacing:-.035em;
-
-}
-
-
-.education-card{
-
-    padding:35px 0;
-
-    border-top:1px solid var(--line);
-
-    border-bottom:1px solid var(--line);
-
-}
-
-
-.education-card h3{
-
-    font-family:'Playfair Display',serif;
-
-    font-size:32px;
-
-    font-weight:500;
-
-}
-
-
-.education-card p{
-
-    color:var(--gray);
-
-    margin-top:10px;
-
-    font-size:14px;
-
-}
-
-
-.education-card strong{
-
-    color:var(--black);
-
-}
-
-
-/* =====================================================
-   CONTACTO
-===================================================== */
-
-.contact{
-
-    background:var(--cream2);
-
-    min-height:65vh;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:space-between;
-
-}
-
-
-.contact-title{
-
-    font-family:'Playfair Display',serif;
-
-    font-size:
-        clamp(
-            55px,
-            10vw,
-            145px
-        );
-
-    line-height:.85;
-
-    font-weight:500;
-
-    letter-spacing:-.055em;
-
-}
-
-
-.contact-bottom{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:end;
-
-    gap:30px;
-
-    margin-top:70px;
-
-}
-
-
-.contact-data{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:8px;
-
-    font-size:14px;
-
-}
-
-
-.contact-label{
-
-    font-size:9px;
-
-    text-transform:uppercase;
-
-    letter-spacing:.2em;
-
-    color:var(--gray);
-
-    margin-top:12px;
-
-}
-
-
-.pdf-button{
-
-    background:var(--black);
-
-    color:white;
-
-    padding:17px 25px;
-
-    font-size:10px;
-
-    letter-spacing:.17em;
-
-    text-transform:uppercase;
-
-    transition:.3s;
-
-}
-
-
-.pdf-button:hover{
-
-    transform:translateY(-3px);
-
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer{
-
-    padding:25px 7vw;
-
-    background:#111311;
-
-    color:#8b8e89;
-
-    font-size:10px;
-
-    letter-spacing:.14em;
-
-    text-transform:uppercase;
-
-    display:flex;
-
-    justify-content:space-between;
-
-}
-
-
-/* =====================================================
-   LIGHTBOX
-===================================================== */
-
-.lightbox{
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:5000;
-
-    background:rgba(0,0,0,.96);
-
-    display:none;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:30px;
-
-}
-
-
-.lightbox.active{
-
-    display:flex;
-
-}
-
-
-.lightbox img{
-
-    max-width:90vw;
-
-    max-height:88vh;
-
-    width:auto;
-
-    height:auto;
-
-    object-fit:contain;
-
-}
-
-
-.close{
-
-    position:absolute;
-
-    right:25px;
-
-    top:15px;
-
-    border:none;
-
-    background:none;
-
-    color:white;
-
-    font-size:40px;
-
-    cursor:pointer;
-
-    z-index:10;
-
-}
-
-
-.arrow{
-
-    position:absolute;
-
-    top:50%;
-
-    transform:translateY(-50%);
-
-    border:none;
-
-    background:none;
-
-    color:white;
-
-    font-size:55px;
-
-    cursor:pointer;
-
-    padding:20px;
-
-    z-index:10;
-
-}
-
-
-.arrow-left{
-
-    left:15px;
-
-}
-
-
-.arrow-right{
-
-    right:15px;
-
-}
-
-
-/* =====================================================
-   ANIMACIONES
-===================================================== */
-
-.reveal{
-
-    opacity:0;
-
-    transform:translateY(25px);
-
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
-
-}
-
-
-.reveal.show{
-
-    opacity:1;
-
-    transform:none;
-
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media(max-width:900px){
-
-    .hero h1{
-
-        font-size:12vw;
-
-    }
-
-}
-
-
-/* =====================================================
-   CELULAR
-===================================================== */
-
-@media(max-width:800px){
-
-    .nav{
-
-        padding:18px 5vw;
-
-    }
-
-
-    .nav-menu{
-
-        display:none;
-
-    }
-
-
-    section{
-
-        padding:85px 6vw;
-
-    }
-
-
-    /* -----------------------------------------
-       PORTADA
-    ----------------------------------------- */
-
-    .hero{
-
-        min-height:100svh;
-
-        display:flex;
-
-        align-items:flex-end;
-
-    }
-
-
-    .hero-image{
-
-        background-position:center center;
-
-    }
-
-
-    .hero-image::after{
-
-        background:
-            linear-gradient(
-                to bottom,
-                rgba(0,0,0,.08),
-                rgba(0,0,0,.15) 35%,
-                rgba(0,0,0,.85)
-            );
-
-    }
-
-
-    .hero-content{
-
-        padding:
-            0
-            6vw
-            7vh;
-
-    }
-
-
-    .hero h1{
-
-        font-size:18vw;
-
-        line-height:.82;
-
-    }
-
-
-    .small-title{
-
-        font-size:9px;
-
-        margin-bottom:18px;
-
-    }
-
-
-    .hero-info{
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-        margin-top:30px;
-
-        gap:22px;
-
-    }
-
-
-    .role{
-
-        font-size:10px;
-
-        line-height:1.8;
-
-    }
-
-
-    .hero-button{
-
-        padding:13px 19px;
-
-    }
-
-
-    /* -----------------------------------------
-       PERFIL
-    ----------------------------------------- */
-
-    .profile{
-
-        grid-template-columns:1fr;
-
-        gap:35px;
-
-    }
-
-
-    .profile-text{
-
-        font-size:16px;
-
-    }
-
-
-    /* -----------------------------------------
-       HIGHLIGHTS
-    ----------------------------------------- */
-
-    .highlights{
-
-        grid-template-columns:1fr;
-
-        margin-top:55px;
-
-    }
-
-
-    .highlight{
-
-        border-right:none;
-
-        border-bottom:1px solid var(--line);
-
-    }
-
-
-    .highlight:last-child{
-
-        border-bottom:none;
-
-    }
-
-
-    /* -----------------------------------------
-       EXPERIENCIA
-    ----------------------------------------- */
-
-    .job{
-
-        grid-template-columns:1fr;
-
-        gap:20px;
-
-        padding:38px 0;
-
-    }
-
-
-    .job-title{
-
-        font-size:23px;
-
-    }
-
-
-    /* -----------------------------------------
-       COMPETENCIAS
-    ----------------------------------------- */
-
-    .skills-section{
-
-        grid-template-columns:1fr;
-
-        gap:35px;
-
-    }
-
-
-    /* -----------------------------------------
-       ÁLBUM
-    ----------------------------------------- */
-
-    .album-header{
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-        gap:25px;
-
-        margin-bottom:40px;
-
-    }
-
-
-    .album-title{
-
-        font-size:58px;
-
-    }
-
-
-    .album-description{
-
-        max-width:100%;
-
-        font-size:13px;
-
-    }
-
-
-    /* UNA SOLA COLUMNA EN CELULAR */
-
-    .gallery{
-
-        grid-template-columns:1fr;
-
-        gap:12px;
-
-    }
-
-
-    .photo,
-    .photo-1,
-    .photo-2,
-    .photo-3,
-    .photo-4,
-    .photo-5,
-    .photo-6,
-    .photo-7,
-    .photo-8,
-    .photo-9{
-
-        grid-column:span 1;
-
-        aspect-ratio:4 / 5;
-
-    }
-
-
-    /* Fotos horizontales grandes */
-
-    .photo-1,
-    .photo-4,
-    .photo-8{
-
-        aspect-ratio:4 / 5;
-
-    }
-
-
-    .photo img{
-
-        object-fit:cover;
-
-    }
-
-
-    /* -----------------------------------------
-       EDUCACIÓN
-    ----------------------------------------- */
-
-    .education{
-
-        grid-template-columns:1fr;
-
-        gap:35px;
-
-    }
-
-
-    .education-card h3{
-
-        font-size:28px;
-
-    }
-
-
-    /* -----------------------------------------
-       CONTACTO
-    ----------------------------------------- */
-
-    .contact-bottom{
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-        margin-top:60px;
-
-    }
-
-
-    .contact-title{
-
-        font-size:58px;
-
-    }
-
-
-    /* -----------------------------------------
-       FOOTER
-    ----------------------------------------- */
-
-    footer{
-
-        flex-direction:column;
-
-        gap:12px;
-
-    }
-
-
-    /* -----------------------------------------
-       LIGHTBOX
-    ----------------------------------------- */
-
-    .lightbox{
-
-        padding:12px;
-
-    }
-
-
-    .lightbox img{
-
-        max-width:94vw;
-
-        max-height:82vh;
-
-    }
-
-
-    .arrow{
-
-        font-size:38px;
-
-        padding:10px;
-
-    }
-
-}
-
-
-/* =====================================================
-   CELULAR PEQUEÑO
-===================================================== */
-
-@media(max-width:480px){
-
-    .hero h1{
-
-        font-size:19vw;
-
-    }
-
-
-    .hero-content{
-
-        padding-bottom:55px;
-
-    }
-
-
-    .profile-title,
-    .skills-title,
-    .education-title{
-
-        font-size:45px;
-
-    }
-
-
-    .album-title{
-
-        font-size:55px;
-
-    }
-
-
-    .contact-title{
-
-        font-size:55px;
-
-    }
-
-}
-
-
-/* =====================================================
-   REDUCIR ANIMACIONES SI EL USUARIO LO PIDE
-===================================================== */
-
-@media(prefers-reduced-motion:reduce){
-
-    html{
-
-        scroll-behavior:auto;
-
-    }
-
-
-    .reveal{
-
-        opacity:1;
-
-        transform:none;
-
-        transition:none;
-
-    }
-
-
-    .photo img{
-
-        transition:none;
-
-    }
-
-}
-
-</style>
-
+    </style>
 </head>
 
 
 <body>
 
 
-<!-- =====================================================
-     NAV
-===================================================== -->
+    <!-- =========================================================
+         NAV
+    ========================================================= -->
 
-<nav class="nav">
+    <nav class="navbar">
 
-    <a
-        href="#inicio"
-        class="logo">
-
-        JCM
-
-    </a>
-
-
-    <div class="nav-menu">
-
-        <a href="#perfil">
-            Perfil
+        <a href="#inicio" class="nav-logo">
+            Joshua Castillo
         </a>
 
-        <a href="#experiencia">
-            Experiencia
-        </a>
+        <ul class="nav-links">
 
-        <a href="#album">
-            Álbum
-        </a>
+            <li>
+                <a href="#perfil">Perfil</a>
+            </li>
 
-        <a href="#contacto">
-            Contacto
-        </a>
+            <li>
+                <a href="#experiencia">Experiencia</a>
+            </li>
 
-    </div>
+            <li>
+                <a href="#galeria">Galería</a>
+            </li>
 
-</nav>
+            <li>
+                <a href="#contacto">Contacto</a>
+            </li>
 
+        </ul>
 
+    </nav>
 
-<!-- =====================================================
-     PORTADA
-     FOTO 1 DE FONDO
-===================================================== -->
 
-<header
-    class="hero"
-    id="inicio">
 
+    <!-- =========================================================
+         HERO
+         SOLO AQUÍ LA IMAGEN ESTÁ DETRÁS DEL TEXTO
+    ========================================================= -->
 
-    <div class="hero-image"></div>
+    <header class="hero" id="inicio">
 
-
-    <div class="hero-content reveal">
-
-
-        <div class="small-title">
-
-            Portafolio profesional
-
-        </div>
-
-
-        <h1>
-
-            Joshua
-
-            <span>
-                Castillo
-            </span>
-
-            Medina
-
-        </h1>
-
-
-        <div class="hero-info">
-
-
-            <div class="role">
-
-                Embajador de marca
-                <br>
-
-                Ventas · Atención al cliente
-                <br>
-
-                Community Management
-
-            </div>
-
-
-            <a
-                href="#perfil"
-                class="hero-button">
-
-                Ver perfil ↓
-
-            </a>
-
-
-        </div>
-
-
-    </div>
-
-</header>
-
-
-
-<!-- =====================================================
-     PERFIL
-===================================================== -->
-
-<section id="perfil">
-
-
-    <div class="profile reveal">
-
-
-        <div>
-
-
-            <div class="label">
-
-                01 / Perfil profesional
-
-            </div>
-
-
-            <h2 class="profile-title">
-
-                Relaciones que
-                <br>
-
-                generan
-                <br>
-
-                oportunidades.
-
-            </h2>
-
-
-        </div>
-
-
-        <div class="profile-text">
-
-
-            <p>
-
-                Profesional con experiencia en ventas,
-                atención al cliente, generación de
-                prospectos y manejo de redes sociales,
-                trabajando para empresas estadounidenses.
-
-            </p>
-
-
-            <p>
-
-                Experiencia en ventas consultivas,
-                contacto directo con clientes,
-                elaboración de cotizaciones, cierre de
-                ventas, seguimiento comercial y servicio
-                postventa.
-
-            </p>
-
-
-            <p>
-
-                Se caracteriza por tener facilidad de
-                palabra, actitud de servicio, enfoque a
-                resultados y capacidad para generar
-                relaciones positivas con los clientes y
-                representar una marca de manera profesional.
-
-            </p>
-
-
-        </div>
-
-
-    </div>
-
-
-
-    <div class="highlights reveal">
-
-
-        <div class="highlight">
-
-            <div class="highlight-number">
-
-                Ventas
-
-            </div>
-
-            <div class="highlight-title">
-
-                Cierre comercial
-
-            </div>
-
-        </div>
-
-
-        <div class="highlight">
-
-            <div class="highlight-number">
-
-                Clientes
-
-            </div>
-
-            <div class="highlight-title">
-
-                Atención y postventa
-
-            </div>
-
-        </div>
-
-
-        <div class="highlight">
-
-            <div class="highlight-number">
-
-                Marca
-
-            </div>
-
-            <div class="highlight-title">
-
-                Representación profesional
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     EXPERIENCIA
-===================================================== -->
-
-<section
-    class="experience"
-    id="experiencia">
-
-
-    <div class="label">
-
-        02 / Experiencia profesional
-
-    </div>
-
-
-    <div class="timeline">
-
-
-        <article class="job reveal">
-
-
-            <div class="job-date">
-
-                2020 — 2022
-
-            </div>
-
-
-            <div>
-
-
-                <h3 class="job-title">
-
-                    Ejecutivo de Ventas y Atención al Cliente
-
-                </h3>
-
-
-                <div class="job-company">
-
-                    Select Insurance · Empresa estadounidense
-
-                </div>
-
-
-                <ul class="job-list">
-
-                    <li>
-
-                        Atención directa a clientes interesados
-                        en seguros de automóvil e identificación
-                        de necesidades.
-
-                    </li>
-
-                    <li>
-
-                        Asesoría durante el proceso de compra,
-                        elaboración de cotizaciones y ventas
-                        en tiempo real.
-
-                    </li>
-
-                    <li>
-
-                        Seguimiento de prospectos hasta concretar
-                        la venta y gestión de documentación
-                        de pólizas.
-
-                    </li>
-
-                    <li>
-
-                        Atención postventa, gestión de cobros
-                        mensuales y resolución de incidencias.
-
-                    </li>
-
-                    <li>
-
-                        Cumplimiento de objetivos comerciales
-                        y seguimiento de oportunidades de venta.
-
-                    </li>
-
-                </ul>
-
-
-            </div>
-
-
-        </article>
-
-
-
-        <article class="job reveal">
-
-
-            <div class="job-date">
-
-                2022 — 2023
-
-            </div>
-
-
-            <div>
-
-
-                <h3 class="job-title">
-
-                    Community Manager /
-                    Generación de Prospectos
-
-                </h3>
-
-
-                <div class="job-company">
-
-                    Empresa estadounidense · Venta de automóviles
-
-                </div>
-
-
-                <ul class="job-list">
-
-                    <li>
-
-                        Gestión de comunicación con clientes
-                        potenciales a través de redes sociales.
-
-                    </li>
-
-                    <li>
-
-                        Búsqueda activa de prospectos interesados
-                        en la compra de vehículos.
-
-                    </li>
-
-                    <li>
-
-                        Atención de mensajes y seguimiento
-                        de interesados.
-
-                    </li>
-
-                    <li>
-
-                        Calificación de prospectos para determinar
-                        interés y perfil de compra.
-
-                    </li>
-
-                    <li>
-
-                        Coordinación y agendamiento de citas
-                        en tienda física.
-
-                    </li>
-
-                </ul>
-
-
-            </div>
-
-
-        </article>
-
-
-
-        <article class="job reveal">
-
-
-            <div class="job-date">
-
-                2025 — Actualidad
-
-            </div>
-
-
-            <div>
-
-
-                <h3 class="job-title">
-
-                    Gerente Operativo de Rancho de Engorda
-
-                </h3>
-
-
-                <div class="job-company">
-
-                    Agroindustrias del Caribe
-
-                </div>
-
-
-                <ul class="job-list">
-
-                    <li>
-
-                        Liderazgo de personal y coordinación
-                        de actividades diarias.
-
-                    </li>
-
-                    <li>
-
-                        Atención a proveedores, administración
-                        de insumos y control de recursos.
-
-                    </li>
-
-                    <li>
-
-                        Responsabilidad sobre resultados
-                        operativos y funcionamiento del rancho.
-
-                    </li>
-
-                </ul>
-
-
-            </div>
-
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     COMPETENCIAS
-===================================================== -->
-
-<section>
-
-
-    <div class="skills-section reveal">
-
-
-        <div>
-
-
-            <div class="label">
-
-                03 / Competencias
-
-            </div>
-
-
-            <h2 class="skills-title">
-
-                Habilidades
-                <br>
-
-                que hacen
-                <br>
-
-                la diferencia.
-
-            </h2>
-
-
-        </div>
-
-
-        <div class="skills">
-
-
-            <span class="skill">
-                Ventas y cierre comercial
-            </span>
-
-            <span class="skill">
-                Atención al cliente
-            </span>
-
-            <span class="skill">
-                Comunicación efectiva
-            </span>
-
-            <span class="skill">
-                Generación de prospectos
-            </span>
-
-            <span class="skill">
-                Servicio postventa
-            </span>
-
-            <span class="skill">
-                Redes sociales
-            </span>
-
-            <span class="skill">
-                Seguimiento de clientes
-            </span>
-
-            <span class="skill">
-                Negociación
-            </span>
-
-            <span class="skill">
-                Resolución de problemas
-            </span>
-
-            <span class="skill">
-                Orientación a resultados
-            </span>
-
-            <span class="skill">
-                Facilidad de palabra
-            </span>
-
-            <span class="skill">
-                Representación de marca
-            </span>
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     ALBUM
-===================================================== -->
-
-<section
-    class="album"
-    id="album">
-
-
-    <div class="album-header reveal">
-
-
-        <div>
-
-
-            <div class="label">
-
-                04 / Álbum
-
-            </div>
-
-
-            <h2 class="album-title">
-
-                Más allá
-                <br>
-
-                del CV.
-
-            </h2>
-
-
-        </div>
-
-
-        <p class="album-description">
-
-            Una selección visual que muestra
-            diferentes facetas, presencia y
-            naturalidad de Joshua.
-
-            <br><br>
-
-            Haz clic sobre cualquier fotografía
-            para verla en pantalla completa.
-
-        </p>
-
-
-    </div>
-
-
-
-    <div class="gallery">
-
-
-        <!-- FOTO 1 -->
-
-        <figure
-            class="photo photo-1 reveal"
-            data-image="1.jpg">
+        <div class="hero-image">
 
             <img
                 src="1.jpg"
-                alt="Joshua Castillo Medina — fotografía 1"
-                loading="lazy"
-                decoding="async">
-
-            <span class="photo-number">
-                01
-            </span>
-
-        </figure>
-
-
-
-        <!-- FOTO 2 -->
-
-        <figure
-            class="photo photo-2 reveal"
-            data-image="2.jpg">
-
-            <img
-                src="2.jpg"
-                alt="Joshua Castillo Medina — fotografía 2"
-                loading="lazy"
-                decoding="async">
-
-            <span class="photo-number">
-                02
-            </span>
-
-        </figure>
-
-
-
-        <!-- FOTO 3 -->
-
-        <figure
-            class="photo photo-3 reveal"
-            data-image="3.jpg">
-
-            <img
-                src="3.jpg"
-                alt="Joshua Castillo Medina — fotografía 3"
-                loading="lazy"
-                decoding="async">
-
-            <span class="photo-number">
-                03
-            </span>
-
-        </figure>
-
-
-
-        <!-- FOTO 4 -->
-
-        <figure
-            class="photo photo-4 reveal"
-            data-image="4.jpeg">
-
-            <img
-                src="4.jpeg"
-                alt="Joshua Castillo Medina — fotografía 4"
-                loading="lazy"
-                decoding="async">
-
-            <span class="photo-number">
-                04
-            </span>
-
-        </figure>
-
-
-
-        <!-- FOTO 5 -->
-
-        <figure
-            class="photo photo-5 reveal"
-            data-image="5.jpeg">
-
-            <img
-                src="5.jpeg"
-                alt="Joshua Castillo Medina — fotografía 5"
-                loading="lazy"
-                decoding="async">
-
-            <span class="photo-number">
-                05
-            </span>
-
-        </figure>
-
-
-
-        <!-- FOTO 6 -->
-
-        <figure
-            class="photo photo-6 reveal"
-            data-image="6.jpg">
-
-            <img
-                src="6.jpg"
-                alt="Joshua Castillo Medina — fotografía 6"
-                loading="lazy"
-                decoding="async">
-
-            <span class="photo-number">
-                06
-            </span>
-
-        </figure>
-
-
-
-        <!-- FOTO 7 -->
-
-        <figure
-            class="photo photo-7 reveal"
-            data-image="7.jpeg">
-
-            <img
-                src="7.jpeg"
-                alt="Joshua Castillo Medina — fotografía 7"
-                loading="lazy"
-                decoding="async">
-
-            <span class="photo-number">
-                07
-            </span>
-
-        </figure>
-
-
-
-        <!-- FOTO 8 -->
-
-        <figure
-            class="photo photo-8 reveal"
-            data-image="8.jpg">
-
-            <img
-                src="8.jpg"
-                alt="Joshua Castillo Medina — fotografía 8"
-                loading="lazy"
-                decoding="async">
-
-            <span class="photo-number">
-                08
-            </span>
-
-        </figure>
-
-
-
-        <!-- FOTO 9 -->
-
-        <figure
-            class="photo photo-9 reveal"
-            data-image="9.jpg">
-
-            <img
-                src="9.jpg"
-                alt="Joshua Castillo Medina — fotografía 9"
-                loading="lazy"
-                decoding="async">
-
-            <span class="photo-number">
-                09
-            </span>
-
-        </figure>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     FORMACIÓN
-===================================================== -->
-
-<section class="education">
-
-
-    <div class="reveal">
-
-
-        <div class="label">
-
-            05 / Formación
+                alt="Joshua Castillo Medina"
+                fetchpriority="high"
+                decoding="async"
+                onerror="this.onerror=null; this.src='1.jpeg';"
+            >
 
         </div>
 
+        <div class="hero-overlay"></div>
 
-        <h2 class="education-title">
+        <div class="hero-content reveal">
 
-            Formación
-            <br>
+            <span class="hero-small">
+                Perfil profesional
+            </span>
 
-            y datos
-            <br>
+            <h1>
+                Joshua<br>
+                Castillo<br>
+                Medina
+            </h1>
 
-            adicionales.
-
-        </h2>
-
-
-    </div>
-
-
-
-    <div>
-
-
-        <div class="education-card reveal">
-
-
-            <h3>
-
-                Licenciatura en
-                <br>
-                Administración Ganadera
-
-            </h3>
-
-
-            <p>
-
-                Instituto Universitario
-                Eloísa Patrón de Rosado
-
+            <p class="hero-title">
+                Embajador de Marca · Ventas · Atención al Cliente
             </p>
 
+            <div class="hero-line"></div>
 
         </div>
 
-
-
-        <div
-            class="education-card reveal"
-            style="margin-top:35px">
-
-
-            <p>
-
-                <strong>
-                    Ubicación:
-                </strong>
-
-                Cancún, Quintana Roo
-
-            </p>
-
-
-            <p>
-
-                <strong>
-                    Disponibilidad:
-                </strong>
-
-                Disponible para reubicación
-
-            </p>
-
-
-            <p>
-
-                <strong>
-                    Idiomas:
-                </strong>
-
-                Español · Inglés
-
-            </p>
-
-
-            <p>
-
-                <strong>
-                    Licencia:
-                </strong>
-
-                Licencia de conducir
-
-            </p>
-
-
-        </div>
-
-
-    </div>
-
-</section>
+    </header>
 
 
 
-<!-- =====================================================
-     CONTACTO
-===================================================== -->
+    <!-- =========================================================
+         MAIN
+         TODO EL CV ESTÁ SEPARADO DE LA GALERÍA
+    ========================================================= -->
 
-<section
-    class="contact"
-    id="contacto">
-
-
-    <div class="reveal">
+    <main>
 
 
-        <div class="label">
+        <!-- =====================================================
+             PERFIL
+        ===================================================== -->
 
-            06 / Contacto
+        <section class="section intro" id="perfil">
 
-        </div>
+            <div class="intro-grid">
+
+                <div>
+
+                    <span class="section-label">
+                        01 — Perfil
+                    </span>
+
+                    <h2 class="section-title">
+                        Profesional orientado a las personas y a los resultados.
+                    </h2>
+
+                    <p class="section-text">
+                        Profesional con experiencia en ventas, atención al cliente,
+                        generación de prospectos y manejo de redes sociales,
+                        trabajando para empresas estadounidenses.
+
+                        <br><br>
+
+                        Experiencia en ventas consultivas, contacto directo con
+                        clientes, elaboración de cotizaciones, cierre de ventas,
+                        seguimiento comercial y servicio postventa.
+
+                        <br><br>
+
+                        Facilidad de palabra, actitud de servicio, enfoque a
+                        resultados y capacidad para generar relaciones positivas
+                        con clientes y representar una marca profesionalmente.
+                    </p>
+
+                </div>
 
 
-        <h2 class="contact-title">
+                <div class="intro-side">
 
-            Hablemos de
-            <br>
+                    <div class="intro-side-item">
 
-            lo que sigue.
+                        <span class="intro-side-label">
+                            Ubicación
+                        </span>
 
-        </h2>
+                        <span class="intro-side-value">
+                            Cancún, Quintana Roo
+                        </span>
 
-
-    </div>
-
-
-
-    <div class="contact-bottom reveal">
+                    </div>
 
 
-        <div class="contact-data">
+                    <div class="intro-side-item">
+
+                        <span class="intro-side-label">
+                            Disponibilidad
+                        </span>
+
+                        <span class="intro-side-value">
+                            Disponible para reubicación
+                        </span>
+
+                    </div>
 
 
-            <span class="contact-label">
-                Ubicación
+                    <div class="intro-side-item">
+
+                        <span class="intro-side-label">
+                            Licencia
+                        </span>
+
+                        <span class="intro-side-value">
+                            Licencia de conducir
+                        </span>
+
+                    </div>
+
+
+                    <div class="intro-side-item">
+
+                        <span class="intro-side-label">
+                            Idiomas
+                        </span>
+
+                        <span class="intro-side-value">
+                            Español · Inglés
+                        </span>
+
+                    </div>
+
+
+                    <div class="intro-side-item">
+
+                        <span class="intro-side-label">
+                            Especialidad
+                        </span>
+
+                        <span class="intro-side-value">
+                            Ventas · Servicio · Representación de marca
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             COMPETENCIAS
+        ===================================================== -->
+
+        <section class="section competencies">
+
+            <span class="section-label">
+                02 — Competencias
             </span>
 
-            <span>
-                Cancún, Quintana Roo
+            <h2 class="section-title">
+                Lo que puedo aportar.
+            </h2>
+
+
+            <div class="competency-grid">
+
+
+                <div class="competency">
+                    <div>
+                        <span class="competency-number">01</span>
+                        <div class="competency-text">
+                            Ventas y cierre comercial
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="competency">
+                    <div>
+                        <span class="competency-number">02</span>
+                        <div class="competency-text">
+                            Atención al cliente
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="competency">
+                    <div>
+                        <span class="competency-number">03</span>
+                        <div class="competency-text">
+                            Comunicación efectiva
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="competency">
+                    <div>
+                        <span class="competency-number">04</span>
+                        <div class="competency-text">
+                            Generación de prospectos
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="competency">
+                    <div>
+                        <span class="competency-number">05</span>
+                        <div class="competency-text">
+                            Servicio postventa
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="competency">
+                    <div>
+                        <span class="competency-number">06</span>
+                        <div class="competency-text">
+                            Redes sociales
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="competency">
+                    <div>
+                        <span class="competency-number">07</span>
+                        <div class="competency-text">
+                            Seguimiento de clientes
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="competency">
+                    <div>
+                        <span class="competency-number">08</span>
+                        <div class="competency-text">
+                            Negociación
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="competency">
+                    <div>
+                        <span class="competency-number">09</span>
+                        <div class="competency-text">
+                            Resolución de problemas
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="competency">
+                    <div>
+                        <span class="competency-number">10</span>
+                        <div class="competency-text">
+                            Orientación a resultados
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="competency">
+                    <div>
+                        <span class="competency-number">11</span>
+                        <div class="competency-text">
+                            Facilidad de palabra
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="competency">
+                    <div>
+                        <span class="competency-number">12</span>
+                        <div class="competency-text">
+                            Representación de marca
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             EXPERIENCIA
+        ===================================================== -->
+
+        <section class="section experience" id="experiencia">
+
+            <span class="section-label">
+                03 — Experiencia
             </span>
 
+            <h2 class="section-title">
+                Trayectoria profesional.
+            </h2>
 
-            <span class="contact-label">
-                Disponibilidad
+
+            <div class="experience-list">
+
+
+                <!-- EXPERIENCIA 1 -->
+
+                <article class="experience-item">
+
+                    <div class="experience-date">
+                        2020 — 2022
+                    </div>
+
+                    <div>
+
+                        <h3 class="experience-role">
+                            Ejecutivo de Ventas y Atención al Cliente
+                        </h3>
+
+                        <div class="experience-company">
+                            Select Insurance · Empresa estadounidense
+                        </div>
+
+                        <p class="experience-description">
+                            Atención directa a clientes interesados en seguros
+                            de automóvil, identificación de necesidades,
+                            asesoría, cotizaciones y ventas en tiempo real.
+
+                            <br><br>
+
+                            Seguimiento de prospectos hasta la venta,
+                            documentación de pólizas, servicio postventa,
+                            cobros mensuales, atención de incidencias y
+                            cumplimiento de objetivos comerciales.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- EXPERIENCIA 2 -->
+
+                <article class="experience-item">
+
+                    <div class="experience-date">
+                        2022 — 2023
+                    </div>
+
+                    <div>
+
+                        <h3 class="experience-role">
+                            Community Manager / Generación de Prospectos
+                        </h3>
+
+                        <div class="experience-company">
+                            Empresa estadounidense · Venta de automóviles
+                        </div>
+
+                        <p class="experience-description">
+                            Gestión de comunicación por redes sociales,
+                            búsqueda de prospectos y atención de mensajes.
+
+                            <br><br>
+
+                            Seguimiento de clientes potenciales,
+                            identificación de necesidades, calificación
+                            de prospectos y generación de citas en tienda.
+
+                            <br><br>
+
+                            Desarrollo de relaciones con clientes potenciales
+                            y seguimiento durante el proceso comercial.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- EXPERIENCIA 3 -->
+
+                <article class="experience-item">
+
+                    <div class="experience-date">
+                        2025 — Actualidad
+                    </div>
+
+                    <div>
+
+                        <h3 class="experience-role">
+                            Gerente Operativo de Rancho de Engorda
+                        </h3>
+
+                        <div class="experience-company">
+                            Agroindustrias del Caribe
+                        </div>
+
+                        <p class="experience-description">
+                            Liderazgo de personal y coordinación de las
+                            actividades diarias del rancho.
+
+                            <br><br>
+
+                            Coordinación con proveedores, administración
+                            de insumos y recursos, seguimiento de procesos
+                            y atención de resultados operativos.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             EDUCACIÓN
+        ===================================================== -->
+
+        <section class="section education">
+
+            <span class="section-label">
+                04 — Formación
             </span>
 
-            <span>
-                Inmediata · Reubicación
+            <h2 class="section-title">
+                Educación.
+            </h2>
+
+
+            <div class="education-box">
+
+                <h3 class="education-degree">
+                    Licenciatura en Administración Ganadera
+                </h3>
+
+                <p class="education-school">
+                    Instituto Universitario Eloísa Patrón de Rosado
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             INFORMACIÓN ADICIONAL
+        ===================================================== -->
+
+        <section class="section additional">
+
+            <span class="section-label">
+                05 — Información adicional
             </span>
 
+            <h2 class="section-title">
+                Experiencia que conecta.
+            </h2>
 
-        </div>
 
+            <div class="additional-grid">
 
-        <a
-            href="CV_Joshua_Castillo_Medina.pdf"
-            target="_blank"
-            class="pdf-button">
 
-            Abrir CV completo ↗
+                <div class="additional-item">
 
-        </a>
+                    <h3>
+                        Experiencia internacional
+                    </h3>
 
+                    <p>
+                        Experiencia profesional trabajando con empresas
+                        estadounidenses y atención directa a sus clientes.
+                    </p>
 
-    </div>
+                </div>
 
-</section>
 
+                <div class="additional-item">
 
+                    <h3>
+                        Representación profesional
+                    </h3>
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+                    <p>
+                        Facilidad para relacionarse con clientes y representar
+                        una marca de manera profesional.
+                    </p>
 
-<footer>
+                </div>
 
-    <span>
-        Joshua Castillo Medina
-    </span>
 
+                <div class="additional-item">
 
-    <span>
-        Embajador de Marca · 2026
-    </span>
+                    <h3>
+                        Disponibilidad
+                    </h3>
 
-</footer>
+                    <p>
+                        Disponibilidad inmediata y apertura para reubicación.
+                    </p>
 
+                </div>
 
 
-<!-- =====================================================
-     LIGHTBOX
-===================================================== -->
+                <div class="additional-item">
 
-<div
-    class="lightbox"
-    id="lightbox">
+                    <h3>
+                        Enfoque
+                    </h3>
 
+                    <p>
+                        Actitud de servicio, orientación a resultados,
+                        construcción de relaciones de confianza y fidelización.
+                    </p>
 
-    <button
-        class="close"
-        id="closeLightbox"
-        aria-label="Cerrar">
+                </div>
 
-        ×
+            </div>
 
-    </button>
+        </section>
 
 
-    <button
-        class="arrow arrow-left"
-        id="previous"
-        aria-label="Fotografía anterior">
 
-        ‹
+        <!-- =====================================================
+             GALERÍA
+             TOTALMENTE SEPARADA DEL CV
+        ===================================================== -->
 
-    </button>
+        <section class="gallery-section" id="galeria">
 
+            <div class="gallery-header">
 
-    <img
-        id="lightboxImage"
-        src=""
-        alt="">
+                <span class="section-label">
+                    06 — Galería
+                </span>
 
+                <h2>
+                    Más allá del currículum.
+                </h2>
 
-    <button
-        class="arrow arrow-right"
-        id="next"
-        aria-label="Fotografía siguiente">
+                <p>
+                    Una selección visual que acompaña la trayectoria,
+                    personalidad y presencia profesional de Joshua.
+                </p>
 
-        ›
+            </div>
 
-    </button>
 
+            <div class="gallery">
 
-</div>
 
+                <!-- 2 -->
 
+                <div class="photo photo-2">
 
-<script>
+                    <span class="photo-number">
+                        02
+                    </span>
 
-/* =====================================================
-   LIGHTBOX
-===================================================== */
+                    <img
+                        src="2.jpg"
+                        alt="Joshua Castillo Medina"
+                        loading="lazy"
+                        decoding="async"
+                    >
 
-const photos =
-    [...document.querySelectorAll('.photo img')];
+                </div>
 
 
-const lightbox =
-    document.getElementById('lightbox');
+                <!-- 3 -->
 
+                <div class="photo photo-3">
 
-const lightboxImage =
-    document.getElementById('lightboxImage');
+                    <span class="photo-number">
+                        03
+                    </span>
 
+                    <img
+                        src="3.jpg"
+                        alt="Joshua Castillo Medina"
+                        loading="lazy"
+                        decoding="async"
+                    >
 
-const closeButton =
-    document.getElementById('closeLightbox');
+                </div>
 
 
-const previousButton =
-    document.getElementById('previous');
+                <!-- 4 -->
 
+                <div class="photo photo-4 photo-wide">
 
-const nextButton =
-    document.getElementById('next');
+                    <span class="photo-number">
+                        04
+                    </span>
 
+                    <img
+                        src="4.jpeg"
+                        alt="Joshua Castillo Medina"
+                        loading="lazy"
+                        decoding="async"
+                    >
 
-let currentPhoto = 0;
+                </div>
 
 
+                <!-- 5 -->
 
-function openLightbox(index){
+                <div class="photo photo-5">
 
-    currentPhoto = index;
+                    <span class="photo-number">
+                        05
+                    </span>
 
-    lightboxImage.src =
-        photos[currentPhoto].src;
+                    <img
+                        src="5.jpeg"
+                        alt="Joshua Castillo Medina"
+                        loading="lazy"
+                        decoding="async"
+                    >
 
-    lightboxImage.alt =
-        photos[currentPhoto].alt;
+                </div>
 
-    lightbox.classList.add('active');
 
-    document.body.style.overflow = 'hidden';
+                <!-- 6 -->
 
-}
+                <div class="photo photo-6">
 
+                    <span class="photo-number">
+                        06
+                    </span>
 
+                    <img
+                        src="6.jpg"
+                        alt="Joshua Castillo Medina"
+                        loading="lazy"
+                        decoding="async"
+                    >
 
-function closeLightbox(){
+                </div>
 
-    lightbox.classList.remove('active');
 
-    document.body.style.overflow = '';
+                <!-- 7 JPEG -->
 
-}
+                <div class="photo photo-7">
 
+                    <span class="photo-number">
+                        07
+                    </span>
 
+                    <img
+                        src="7.jpeg"
+                        alt="Joshua Castillo Medina"
+                        loading="lazy"
+                        decoding="async"
+                    >
 
-function changePhoto(direction){
+                </div>
 
-    currentPhoto += direction;
 
+                <!-- 7 JPG -->
 
-    if(currentPhoto < 0){
+                <div class="photo photo-7">
 
-        currentPhoto =
-            photos.length - 1;
+                    <span class="photo-number">
+                        07B
+                    </span>
 
-    }
+                    <img
+                        src="7.jpg"
+                        alt="Joshua Castillo Medina"
+                        loading="lazy"
+                        decoding="async"
+                    >
 
+                </div>
 
-    if(currentPhoto >= photos.length){
 
-        currentPhoto = 0;
+                <!-- 8 -->
 
-    }
+                <div class="photo photo-8 photo-wide">
 
+                    <span class="photo-number">
+                        08
+                    </span>
 
-    lightboxImage.src =
-        photos[currentPhoto].src;
+                    <img
+                        src="8.jpg"
+                        alt="Joshua Castillo Medina"
+                        loading="lazy"
+                        decoding="async"
+                    >
 
-    lightboxImage.alt =
-        photos[currentPhoto].alt;
+                </div>
 
-}
 
+                <!-- 9 -->
 
+                <div class="photo photo-9 photo-wide">
 
-photos.forEach(
-    (photo,index)=>{
+                    <span class="photo-number">
+                        09
+                    </span>
 
-        photo
-        .closest('.photo')
-        .addEventListener(
-            'click',
-            ()=>openLightbox(index)
+                    <img
+                        src="9.jpg"
+                        alt="Joshua Castillo Medina"
+                        loading="lazy"
+                        decoding="async"
+                    >
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CONTACTO
+        ===================================================== -->
+
+        <section class="section contact" id="contacto">
+
+            <div class="contact-inner">
+
+                <span class="section-label">
+                    07 — Contacto
+                </span>
+
+                <h2 class="contact-title">
+                    Hablemos.
+                </h2>
+
+                <p class="contact-text">
+                    Disponible para nuevas oportunidades profesionales,
+                    proyectos comerciales y representación de marca.
+                </p>
+
+
+                <div class="contact-buttons">
+
+                    <a
+                        class="button"
+                        href="mailto:contacto@ejemplo.com"
+                    >
+                        Enviar correo
+                    </a>
+
+                    <a
+                        class="button"
+                        href="tel:+520000000000"
+                    >
+                        Llamar
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer>
+
+        Joshua Castillo Medina · Perfil Profesional
+
+    </footer>
+
+
+
+    <!-- =========================================================
+         SCRIPT
+    ========================================================= -->
+
+    <script>
+
+        /*
+         * Animación sencilla al entrar en pantalla.
+         * No utiliza librerías externas para mantener
+         * la página rápida en celular.
+         */
+
+        const sections = document.querySelectorAll(
+            '.section, .gallery-section'
         );
 
-    }
-);
+        const observer = new IntersectionObserver(
+            (entries) => {
 
+                entries.forEach((entry) => {
 
+                    if (entry.isIntersecting) {
 
-closeButton.addEventListener(
-    'click',
-    closeLightbox
-);
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
 
-
-
-previousButton.addEventListener(
-    'click',
-    ()=>changePhoto(-1)
-);
-
-
-
-nextButton.addEventListener(
-    'click',
-    ()=>changePhoto(1)
-);
-
-
-
-lightbox.addEventListener(
-    'click',
-    event=>{
-
-        if(event.target === lightbox){
-
-            closeLightbox();
-
-        }
-
-    }
-);
-
-
-
-document.addEventListener(
-    'keydown',
-    event=>{
-
-        if(
-            !lightbox.classList.contains('active')
-        ){
-
-            return;
-
-        }
-
-
-        if(event.key === 'Escape'){
-
-            closeLightbox();
-
-        }
-
-
-        if(event.key === 'ArrowLeft'){
-
-            changePhoto(-1);
-
-        }
-
-
-        if(event.key === 'ArrowRight'){
-
-            changePhoto(1);
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   SWIPE EN CELULAR
-===================================================== */
-
-let touchStartX = 0;
-
-
-lightbox.addEventListener(
-    'touchstart',
-    event=>{
-
-        touchStartX =
-            event.changedTouches[0].screenX;
-
-    },
-    {
-        passive:true
-    }
-);
-
-
-lightbox.addEventListener(
-    'touchend',
-    event=>{
-
-        const touchEndX =
-            event.changedTouches[0].screenX;
-
-        const difference =
-            touchEndX - touchStartX;
-
-
-        if(
-            Math.abs(difference) > 50
-        ){
-
-            changePhoto(
-                difference > 0
-                    ? -1
-                    : 1
-            );
-
-        }
-
-    },
-    {
-        passive:true
-    }
-);
-
-
-/* =====================================================
-   REVEAL
-===================================================== */
-
-const revealElements =
-    document.querySelectorAll('.reveal');
-
-
-if('IntersectionObserver' in window){
-
-    const observer =
-        new IntersectionObserver(
-            entries=>{
-
-                entries.forEach(
-                    entry=>{
-
-                        if(
-                            entry.isIntersecting
-                        ){
-
-                            entry
-                            .target
-                            .classList
-                            .add('show');
-
-
-                            observer.unobserve(
-                                entry.target
-                            );
-
-                        }
+                        observer.unobserve(entry.target);
 
                     }
-                );
+
+                });
 
             },
             {
-                threshold:.05
+                threshold: 0.08
             }
         );
 
 
-    revealElements.forEach(
-        element=>{
+        sections.forEach((section) => {
 
-            observer.observe(element);
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition =
+                'opacity .7s ease, transform .7s ease';
 
-        }
-    );
+            observer.observe(section);
 
-}else{
+        });
 
-    revealElements.forEach(
-        element=>{
 
-            element.classList.add('show');
+        /*
+         * Evita que el navegador intente mantener
+         * el foco de elementos fuera de pantalla.
+         */
 
-        }
-    );
+        document.querySelectorAll('a[href^="#"]').forEach((link) => {
 
-}
+            link.addEventListener('click', function(e) {
 
-</script>
+                const target = document.querySelector(
+                    this.getAttribute('href')
+                );
 
+                if (target) {
+
+                    e.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+
+                }
+
+            });
+
+        });
+
+    </script>
 
 </body>
-
 </html>

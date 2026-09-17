@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
@@ -12,46 +13,86 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
-      rel="stylesheet">
+<link
+href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+rel="stylesheet">
+
 
 <style>
 
+/* =====================================================
+   VARIABLES
+===================================================== */
+
 :root{
+
     --black:#111311;
+
     --cream:#f3efe8;
+
     --cream2:#e8e0d4;
+
     --white:#fffdf9;
+
     --gray:#70736e;
+
     --gold:#b39261;
+
     --line:rgba(17,19,17,.14);
+
 }
+
+
+/* =====================================================
+   RESET
+===================================================== */
 
 *{
+
     margin:0;
+
     padding:0;
+
     box-sizing:border-box;
+
 }
+
 
 html{
+
     scroll-behavior:smooth;
+
 }
+
 
 body{
+
     background:var(--cream);
+
     color:var(--black);
+
     font-family:'DM Sans',sans-serif;
+
     overflow-x:hidden;
+
 }
+
 
 a{
+
     color:inherit;
+
     text-decoration:none;
+
 }
 
+
 img{
+
     display:block;
+
     width:100%;
+
 }
 
 
@@ -60,14 +101,21 @@ img{
 ===================================================== */
 
 .nav{
+
     position:fixed;
+
     top:0;
+
     left:0;
+
     width:100%;
+
     z-index:1000;
 
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 
     padding:25px 6vw;
@@ -75,79 +123,102 @@ img{
     color:white;
 
     mix-blend-mode:difference;
+
 }
+
 
 .logo{
+
     font-size:13px;
+
     font-weight:700;
+
     letter-spacing:.25em;
+
 }
+
 
 .nav-menu{
+
     display:flex;
+
     gap:30px;
+
 }
+
 
 .nav-menu a{
+
     font-size:11px;
+
     text-transform:uppercase;
+
     letter-spacing:.15em;
+
     transition:.3s;
+
 }
 
+
 .nav-menu a:hover{
+
     opacity:.55;
+
 }
 
 
 /* =====================================================
    PORTADA
+   ESTA ES LA PORTADA ORIGINAL:
+   FOTO 1 DE FONDO + NOMBRE ENCIMA
 ===================================================== */
 
 .hero{
-    min-height:100vh;
-    min-height:100svh;
 
     position:relative;
 
-    display:grid;
+    min-height:100vh;
 
-    grid-template-columns:52% 48%;
+    min-height:100svh;
+
+    display:flex;
+
+    align-items:flex-end;
 
     overflow:hidden;
 
-    background:#151715;
+    background:#171717;
 
     color:white;
+
 }
 
+
+/* Imagen completa de portada */
+
 .hero-image{
-    position:relative;
+
+    position:absolute;
+
+    inset:0;
 
     z-index:0;
 
-    width:100%;
-    height:100%;
+    background-image:url("1.jpg");
 
-    min-height:100vh;
+    background-position:center center;
 
-    overflow:hidden;
+    background-size:cover;
+
+    background-repeat:no-repeat;
+
 }
 
-.hero-image picture,
-.hero-image img{
-    display:block;
 
-    width:100%;
-    height:100%;
-}
+/* Oscurecimiento elegante */
 
-.hero-image img{
-    object-fit:cover;
-    object-position:center;
-}
+.hero-image::after{
 
-.hero-image:after{
     content:"";
 
     position:absolute;
@@ -156,85 +227,77 @@ img{
 
     background:
         linear-gradient(
-            90deg,
-            rgba(0,0,0,.05),
-            rgba(0,0,0,.18)
+            to bottom,
+            rgba(0,0,0,.08),
+            rgba(0,0,0,.12) 35%,
+            rgba(0,0,0,.78)
         );
+
 }
 
-.hero-overlay{
-    position:absolute;
 
-    inset:0;
-
-    z-index:1;
-
-    pointer-events:none;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,.02),
-            rgba(0,0,0,.03)
-        );
-}
+/* Contenido sobre la fotografía */
 
 .hero-content{
+
     position:relative;
 
     z-index:2;
 
     width:100%;
-    height:100%;
 
     padding:
-        16vh
+        0
         7vw
         8vh;
 
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:flex-end;
-
-    background:#151715;
 }
 
+
 .small-title{
+
     font-size:11px;
 
     text-transform:uppercase;
 
     letter-spacing:.3em;
 
-    margin-bottom:25px;
+    margin-bottom:22px;
 
-    color:#aaa;
+    color:#dedede;
+
 }
 
+
 .hero h1{
+
     font-family:'Playfair Display',serif;
 
     font-weight:500;
 
     font-size:
         clamp(
-            70px,
-            9vw,
-            150px
+            60px,
+            11vw,
+            160px
         );
 
     line-height:.82;
 
     letter-spacing:-.055em;
+
 }
+
 
 .hero h1 span{
+
     display:block;
+
 }
 
+
 .hero-info{
+
     margin-top:42px;
 
     display:flex;
@@ -244,9 +307,12 @@ img{
     align-items:end;
 
     gap:30px;
+
 }
 
+
 .role{
+
     font-size:13px;
 
     text-transform:uppercase;
@@ -256,9 +322,12 @@ img{
     line-height:1.8;
 
     color:#ddd;
+
 }
 
+
 .hero-button{
+
     border:1px solid rgba(255,255,255,.6);
 
     padding:15px 24px;
@@ -271,42 +340,31 @@ img{
 
     transition:.3s;
 
-    white-space:nowrap;
 }
+
 
 .hero-button:hover{
+
     background:white;
+
     color:black;
-}
 
-.hero-photo-label{
-    position:absolute;
-
-    right:24px;
-    bottom:22px;
-
-    z-index:3;
-
-    font-size:10px;
-
-    letter-spacing:.2em;
-
-    color:white;
-
-    text-shadow:
-        0 1px 8px rgba(0,0,0,.5);
 }
 
 
 /* =====================================================
-   SECCIONES
+   GENERAL
 ===================================================== */
 
 section{
-    padding:130px 6vw;
+
+    padding:130px 7vw;
+
 }
 
+
 .label{
+
     font-size:10px;
 
     text-transform:uppercase;
@@ -316,6 +374,7 @@ section{
     color:var(--gray);
 
     margin-bottom:28px;
+
 }
 
 
@@ -324,6 +383,7 @@ section{
 ===================================================== */
 
 .profile{
+
     display:grid;
 
     grid-template-columns:
@@ -331,30 +391,32 @@ section{
         minmax(300px,1.6fr);
 
     gap:9vw;
+
 }
 
-.profile-title,
-.skills-title,
-.education-title{
-    font-family:'Playfair Display',serif;
-
-    font-weight:500;
-
-    letter-spacing:-.04em;
-
-    line-height:.95;
-}
 
 .profile-title{
+
+    font-family:'Playfair Display',serif;
+
     font-size:
         clamp(
             42px,
             5vw,
             72px
         );
+
+    line-height:.98;
+
+    font-weight:500;
+
+    letter-spacing:-.04em;
+
 }
 
+
 .profile-text{
+
     max-width:700px;
 
     font-size:18px;
@@ -362,10 +424,14 @@ section{
     line-height:1.8;
 
     color:#40433f;
+
 }
 
+
 .profile-text p+p{
+
     margin-top:25px;
+
 }
 
 
@@ -374,6 +440,7 @@ section{
 ===================================================== */
 
 .highlights{
+
     margin-top:80px;
 
     border-top:1px solid var(--line);
@@ -384,27 +451,39 @@ section{
 
     grid-template-columns:
         repeat(3,1fr);
+
 }
 
+
 .highlight{
+
     padding:30px;
 
     border-right:1px solid var(--line);
+
 }
+
 
 .highlight:last-child{
+
     border-right:none;
+
 }
 
+
 .highlight-number{
+
     font-family:'Playfair Display',serif;
 
     font-size:35px;
 
     margin-bottom:8px;
+
 }
 
+
 .highlight-title{
+
     font-size:10px;
 
     text-transform:uppercase;
@@ -412,6 +491,7 @@ section{
     letter-spacing:.16em;
 
     color:var(--gray);
+
 }
 
 
@@ -420,16 +500,23 @@ section{
 ===================================================== */
 
 .experience{
+
     background:var(--white);
+
 }
 
+
 .timeline{
+
     border-top:1px solid var(--line);
 
     margin-top:50px;
+
 }
 
+
 .job{
+
     display:grid;
 
     grid-template-columns:
@@ -441,9 +528,12 @@ section{
     padding:50px 0;
 
     border-bottom:1px solid var(--line);
+
 }
 
+
 .job-date{
+
     font-size:11px;
 
     letter-spacing:.16em;
@@ -451,17 +541,23 @@ section{
     text-transform:uppercase;
 
     color:var(--gray);
+
 }
 
+
 .job-title{
+
     font-size:26px;
 
     font-weight:600;
 
     line-height:1.2;
+
 }
 
+
 .job-company{
+
     margin-top:7px;
 
     color:var(--gold);
@@ -469,9 +565,12 @@ section{
     font-size:13px;
 
     font-weight:600;
+
 }
 
+
 .job-list{
+
     list-style:none;
 
     margin-top:24px;
@@ -479,17 +578,23 @@ section{
     color:#555852;
 
     font-size:14px;
+
 }
 
+
 .job-list li{
+
     margin:9px 0;
 
     padding-left:20px;
 
     position:relative;
+
 }
 
-.job-list li:before{
+
+.job-list li::before{
+
     content:"—";
 
     position:absolute;
@@ -497,6 +602,7 @@ section{
     left:0;
 
     color:var(--gold);
+
 }
 
 
@@ -504,8 +610,8 @@ section{
    COMPETENCIAS
 ===================================================== */
 
-.skills-section,
-.education{
+.skills-section{
+
     display:grid;
 
     grid-template-columns:
@@ -513,19 +619,32 @@ section{
         minmax(300px,2fr);
 
     gap:8vw;
+
 }
 
-.skills-title,
-.education-title{
+
+.skills-title{
+
+    font-family:'Playfair Display',serif;
+
     font-size:
         clamp(
             42px,
             5vw,
             72px
         );
+
+    line-height:.95;
+
+    font-weight:500;
+
+    letter-spacing:-.035em;
+
 }
 
+
 .skills{
+
     display:flex;
 
     flex-wrap:wrap;
@@ -533,9 +652,12 @@ section{
     gap:11px;
 
     align-content:start;
+
 }
 
+
 .skill{
+
     border:1px solid var(--line);
 
     padding:13px 18px;
@@ -545,9 +667,12 @@ section{
     font-size:12px;
 
     transition:.25s;
+
 }
 
+
 .skill:hover{
+
     background:var(--black);
 
     color:white;
@@ -555,27 +680,37 @@ section{
     border-color:var(--black);
 
     transform:translateY(-2px);
+
 }
 
 
 /* =====================================================
    ALBUM
+   COMPLETAMENTE SEPARADO DEL TEXTO
 ===================================================== */
 
 .album{
+
     background:#151715;
 
     color:white;
 
     padding-left:6vw;
+
     padding-right:6vw;
+
 }
+
 
 .album .label{
+
     color:#969995;
+
 }
 
+
 .album-header{
+
     display:flex;
 
     justify-content:space-between;
@@ -584,10 +719,13 @@ section{
 
     gap:60px;
 
-    margin-bottom:70px;
+    margin-bottom:60px;
+
 }
 
+
 .album-title{
+
     font-family:'Playfair Display',serif;
 
     font-size:
@@ -602,9 +740,12 @@ section{
     font-weight:500;
 
     letter-spacing:-.045em;
+
 }
 
+
 .album-description{
+
     max-width:340px;
 
     color:#a7aaa5;
@@ -612,48 +753,94 @@ section{
     font-size:14px;
 
     line-height:1.7;
+
 }
 
 
 /* =====================================================
-   GALERÍA GRANDE
+   GALERÍA
 ===================================================== */
 
 .gallery{
+
     display:grid;
 
     grid-template-columns:
-        repeat(
-            2,
-            minmax(0,1fr)
-        );
+        repeat(2,minmax(0,1fr));
 
-    gap:28px;
+    gap:22px;
 
     width:100%;
+
 }
 
+
+/* Cada fotografía está dentro de su propio bloque */
+
 .photo{
+
     position:relative;
+
+    width:100%;
 
     overflow:hidden;
 
-    background:#262826;
+    background:#252725;
 
     cursor:pointer;
 
-    aspect-ratio:3/4;
 }
 
-.photo picture,
+
+/* Tamaños */
+
+.photo-1{
+
+    grid-column:span 2;
+
+    aspect-ratio:16 / 9;
+
+}
+
+
+.photo-2,
+.photo-3,
+.photo-5,
+.photo-6,
+.photo-7,
+.photo-9{
+
+    aspect-ratio:4 / 5;
+
+}
+
+
+.photo-4{
+
+    grid-column:span 2;
+
+    aspect-ratio:16 / 9;
+
+}
+
+
+.photo-8{
+
+    grid-column:span 2;
+
+    aspect-ratio:16 / 9;
+
+}
+
+
+/* Imagen */
+
 .photo img{
-    display:block;
 
     width:100%;
-    height:100%;
-}
 
-.photo img{
+    height:100%;
+
     object-fit:cover;
 
     object-position:center;
@@ -661,23 +848,28 @@ section{
     transition:
         transform .8s
         cubic-bezier(.2,.7,.2,1);
+
 }
+
+
+/* Zoom */
 
 .photo:hover img{
+
     transform:scale(1.035);
+
 }
 
-.photo-1,
-.photo-4,
-.photo-8{
-    aspect-ratio:4/5;
-}
+
+/* Número */
 
 .photo-number{
+
     position:absolute;
 
-    bottom:15px;
-    left:18px;
+    left:20px;
+
+    bottom:18px;
 
     z-index:5;
 
@@ -688,40 +880,97 @@ section{
     color:white;
 
     text-shadow:
-        0 1px 8px rgba(0,0,0,.5);
+        0 1px 8px rgba(0,0,0,.7);
+
 }
 
 
 /* =====================================================
-   EDUCACIÓN
+   FOTO 7
+   Un poco más abajo para que no corte tanto
 ===================================================== */
 
+.photo-7 img{
+
+    object-position:center 38%;
+
+}
+
+
+/* =====================================================
+   FORMACIÓN
+===================================================== */
+
+.education{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(250px,1fr)
+        minmax(300px,2fr);
+
+    gap:8vw;
+
+}
+
+
+.education-title{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:
+        clamp(
+            42px,
+            5vw,
+            72px
+        );
+
+    line-height:.95;
+
+    font-weight:500;
+
+    letter-spacing:-.035em;
+
+}
+
+
 .education-card{
+
     padding:35px 0;
 
     border-top:1px solid var(--line);
 
     border-bottom:1px solid var(--line);
+
 }
 
+
 .education-card h3{
+
     font-family:'Playfair Display',serif;
 
     font-size:32px;
 
     font-weight:500;
+
 }
 
+
 .education-card p{
+
     color:var(--gray);
 
     margin-top:10px;
 
     font-size:14px;
+
 }
 
+
 .education-card strong{
+
     color:var(--black);
+
 }
 
 
@@ -730,6 +979,7 @@ section{
 ===================================================== */
 
 .contact{
+
     background:var(--cream2);
 
     min-height:65vh;
@@ -739,9 +989,12 @@ section{
     flex-direction:column;
 
     justify-content:space-between;
+
 }
 
+
 .contact-title{
+
     font-family:'Playfair Display',serif;
 
     font-size:
@@ -756,9 +1009,12 @@ section{
     font-weight:500;
 
     letter-spacing:-.055em;
+
 }
 
+
 .contact-bottom{
+
     display:flex;
 
     justify-content:space-between;
@@ -768,9 +1024,12 @@ section{
     gap:30px;
 
     margin-top:70px;
+
 }
 
+
 .contact-data{
+
     display:flex;
 
     flex-direction:column;
@@ -778,9 +1037,12 @@ section{
     gap:8px;
 
     font-size:14px;
+
 }
 
+
 .contact-label{
+
     font-size:9px;
 
     text-transform:uppercase;
@@ -790,9 +1052,12 @@ section{
     color:var(--gray);
 
     margin-top:12px;
+
 }
 
+
 .pdf-button{
+
     background:var(--black);
 
     color:white;
@@ -806,12 +1071,14 @@ section{
     text-transform:uppercase;
 
     transition:.3s;
+
 }
 
+
 .pdf-button:hover{
+
     transform:translateY(-3px);
 
-    background:#252825;
 }
 
 
@@ -820,6 +1087,7 @@ section{
 ===================================================== */
 
 footer{
+
     padding:25px 7vw;
 
     background:#111311;
@@ -835,6 +1103,7 @@ footer{
     display:flex;
 
     justify-content:space-between;
+
 }
 
 
@@ -843,6 +1112,7 @@ footer{
 ===================================================== */
 
 .lightbox{
+
     position:fixed;
 
     inset:0;
@@ -858,26 +1128,38 @@ footer{
     justify-content:center;
 
     padding:30px;
+
 }
+
 
 .lightbox.active{
+
     display:flex;
+
 }
 
+
 .lightbox img{
+
     max-width:90vw;
 
     max-height:88vh;
 
     width:auto;
 
+    height:auto;
+
     object-fit:contain;
+
 }
 
+
 .close{
+
     position:absolute;
 
     right:25px;
+
     top:15px;
 
     border:none;
@@ -891,9 +1173,12 @@ footer{
     cursor:pointer;
 
     z-index:10;
+
 }
 
+
 .arrow{
+
     position:absolute;
 
     top:50%;
@@ -906,7 +1191,7 @@ footer{
 
     color:white;
 
-    font-size:50px;
+    font-size:55px;
 
     cursor:pointer;
 
@@ -914,19 +1199,20 @@ footer{
 
     z-index:10;
 
-    opacity:.8;
 }
 
-.arrow:hover{
-    opacity:1;
-}
 
 .arrow-left{
+
     left:15px;
+
 }
 
+
 .arrow-right{
+
     right:15px;
+
 }
 
 
@@ -935,109 +1221,113 @@ footer{
 ===================================================== */
 
 .reveal{
+
     opacity:0;
 
     transform:translateY(25px);
 
     transition:
-        opacity .8s,
-        transform .8s;
+        opacity .8s ease,
+        transform .8s ease;
+
 }
 
+
 .reveal.show{
+
     opacity:1;
 
     transform:none;
+
 }
 
 
 /* =====================================================
-   TABLET / CELULAR
+   TABLET
+===================================================== */
+
+@media(max-width:900px){
+
+    .hero h1{
+
+        font-size:12vw;
+
+    }
+
+}
+
+
+/* =====================================================
+   CELULAR
 ===================================================== */
 
 @media(max-width:800px){
 
     .nav{
+
         padding:18px 5vw;
+
     }
 
+
     .nav-menu{
+
         display:none;
+
     }
 
 
     section{
-        padding:78px 6vw;
+
+        padding:85px 6vw;
+
     }
 
 
-    /* PORTADA */
+    /* -----------------------------------------
+       PORTADA
+    ----------------------------------------- */
 
     .hero{
 
+        min-height:100svh;
+
         display:flex;
 
-        flex-direction:column;
-
-        min-height:auto;
+        align-items:flex-end;
 
     }
+
 
     .hero-image{
 
-        order:1;
-
-        width:100%;
-
-        height:auto;
-
-        min-height:0;
-
-        background:none;
+        background-position:center center;
 
     }
 
-    .hero-image picture,
-    .hero-image img{
 
-        width:100%;
+    .hero-image::after{
 
-        height:auto;
-
-    }
-
-    .hero-image img{
-
-        object-fit:contain;
-
-        object-position:center;
+        background:
+            linear-gradient(
+                to bottom,
+                rgba(0,0,0,.08),
+                rgba(0,0,0,.15) 35%,
+                rgba(0,0,0,.85)
+            );
 
     }
 
-    .hero-overlay{
-
-        display:none;
-
-    }
 
     .hero-content{
 
-        order:2;
-
-        height:auto;
-
-        min-height:0;
-
         padding:
-            58px
+            0
             6vw
-            70px;
-
-        justify-content:flex-start;
-
-        background:#151715;
+            7vh;
 
     }
+
 
     .hero h1{
 
@@ -1047,13 +1337,15 @@ footer{
 
     }
 
+
     .small-title{
 
         font-size:9px;
 
-        margin-bottom:20px;
+        margin-bottom:18px;
 
     }
+
 
     .hero-info{
 
@@ -1061,19 +1353,21 @@ footer{
 
         align-items:flex-start;
 
-        margin-top:32px;
+        margin-top:30px;
 
-        gap:24px;
+        gap:22px;
 
     }
+
 
     .role{
 
-        font-size:11px;
+        font-size:10px;
 
-        line-height:1.75;
+        line-height:1.8;
 
     }
+
 
     .hero-button{
 
@@ -1081,20 +1375,12 @@ footer{
 
     }
 
-    .hero-photo-label{
 
-        right:18px;
+    /* -----------------------------------------
+       PERFIL
+    ----------------------------------------- */
 
-        bottom:16px;
-
-    }
-
-
-    /* PERFIL */
-
-    .profile,
-    .skills-section,
-    .education{
+    .profile{
 
         grid-template-columns:1fr;
 
@@ -1102,16 +1388,17 @@ footer{
 
     }
 
+
     .profile-text{
 
         font-size:16px;
 
-        line-height:1.75;
-
     }
 
 
-    /* HIGHLIGHTS */
+    /* -----------------------------------------
+       HIGHLIGHTS
+    ----------------------------------------- */
 
     .highlights{
 
@@ -1121,6 +1408,7 @@ footer{
 
     }
 
+
     .highlight{
 
         border-right:none;
@@ -1129,6 +1417,7 @@ footer{
 
     }
 
+
     .highlight:last-child{
 
         border-bottom:none;
@@ -1136,17 +1425,20 @@ footer{
     }
 
 
-    /* EXPERIENCIA */
+    /* -----------------------------------------
+       EXPERIENCIA
+    ----------------------------------------- */
 
     .job{
 
         grid-template-columns:1fr;
 
-        gap:22px;
+        gap:20px;
 
         padding:38px 0;
 
     }
+
 
     .job-title{
 
@@ -1155,7 +1447,22 @@ footer{
     }
 
 
-    /* ALBUM */
+    /* -----------------------------------------
+       COMPETENCIAS
+    ----------------------------------------- */
+
+    .skills-section{
+
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+    }
+
+
+    /* -----------------------------------------
+       ÁLBUM
+    ----------------------------------------- */
 
     .album-header{
 
@@ -1163,19 +1470,30 @@ footer{
 
         align-items:flex-start;
 
-        gap:28px;
+        gap:25px;
 
-        margin-bottom:45px;
+        margin-bottom:40px;
 
     }
+
+
+    .album-title{
+
+        font-size:58px;
+
+    }
+
 
     .album-description{
 
-        font-size:13px;
-
         max-width:100%;
 
+        font-size:13px;
+
     }
+
+
+    /* UNA SOLA COLUMNA EN CELULAR */
 
     .gallery{
 
@@ -1184,6 +1502,7 @@ footer{
         gap:12px;
 
     }
+
 
     .photo,
     .photo-1,
@@ -1198,38 +1517,52 @@ footer{
 
         grid-column:span 1;
 
-        width:100%;
-
-        height:auto;
-
-        min-height:0;
-
-        aspect-ratio:auto;
+        aspect-ratio:4 / 5;
 
     }
 
-    .photo picture{
 
-        width:100%;
+    /* Fotos horizontales grandes */
 
-        height:auto;
+    .photo-1,
+    .photo-4,
+    .photo-8{
+
+        aspect-ratio:4 / 5;
 
     }
+
 
     .photo img{
 
-        width:100%;
-
-        height:auto;
-
-        object-fit:contain;
-
-        object-position:center;
+        object-fit:cover;
 
     }
 
 
-    /* CONTACTO */
+    /* -----------------------------------------
+       EDUCACIÓN
+    ----------------------------------------- */
+
+    .education{
+
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+    }
+
+
+    .education-card h3{
+
+        font-size:28px;
+
+    }
+
+
+    /* -----------------------------------------
+       CONTACTO
+    ----------------------------------------- */
 
     .contact-bottom{
 
@@ -1237,10 +1570,21 @@ footer{
 
         align-items:flex-start;
 
+        margin-top:60px;
+
     }
 
 
-    /* FOOTER */
+    .contact-title{
+
+        font-size:58px;
+
+    }
+
+
+    /* -----------------------------------------
+       FOOTER
+    ----------------------------------------- */
 
     footer{
 
@@ -1251,13 +1595,16 @@ footer{
     }
 
 
-    /* LIGHTBOX */
+    /* -----------------------------------------
+       LIGHTBOX
+    ----------------------------------------- */
 
     .lightbox{
 
-        padding:15px;
+        padding:12px;
 
     }
+
 
     .lightbox img{
 
@@ -1267,11 +1614,12 @@ footer{
 
     }
 
+
     .arrow{
 
         font-size:38px;
 
-        padding:12px;
+        padding:10px;
 
     }
 
@@ -1279,7 +1627,7 @@ footer{
 
 
 /* =====================================================
-   CELULARES PEQUEÑOS
+   CELULAR PEQUEÑO
 ===================================================== */
 
 @media(max-width:480px){
@@ -1290,11 +1638,13 @@ footer{
 
     }
 
-    .hero-info{
 
-        margin-top:30px;
+    .hero-content{
+
+        padding-bottom:55px;
 
     }
+
 
     .profile-title,
     .skills-title,
@@ -1304,15 +1654,17 @@ footer{
 
     }
 
+
     .album-title{
 
-        font-size:58px;
+        font-size:55px;
 
     }
 
+
     .contact-title{
 
-        font-size:58px;
+        font-size:55px;
 
     }
 
@@ -1320,7 +1672,7 @@ footer{
 
 
 /* =====================================================
-   REDUCIR MOVIMIENTO
+   REDUCIR ANIMACIONES SI EL USUARIO LO PIDE
 ===================================================== */
 
 @media(prefers-reduced-motion:reduce){
@@ -1331,6 +1683,7 @@ footer{
 
     }
 
+
     .reveal{
 
         opacity:1;
@@ -1340,6 +1693,7 @@ footer{
         transition:none;
 
     }
+
 
     .photo img{
 
@@ -1358,14 +1712,19 @@ footer{
 
 
 <!-- =====================================================
-     NAVEGACIÓN
+     NAV
 ===================================================== -->
 
 <nav class="nav">
 
-    <a href="#inicio" class="logo">
+    <a
+        href="#inicio"
+        class="logo">
+
         JCM
+
     </a>
+
 
     <div class="nav-menu">
 
@@ -1390,43 +1749,27 @@ footer{
 </nav>
 
 
+
 <!-- =====================================================
      PORTADA
+     FOTO 1 DE FONDO
 ===================================================== -->
 
-<header class="hero" id="inicio">
+<header
+    class="hero"
+    id="inicio">
 
 
-    <div class="hero-image">
-
-        <picture>
-
-            <source
-                media="(max-width: 800px)"
-                srcset="mobile_assets/1-mobile.webp">
-
-            <img
-                src="mobile_assets/1.webp"
-                alt="Joshua Castillo Medina"
-                fetchpriority="high"
-                decoding="async">
-
-        </picture>
-
-        <div class="hero-photo-label">
-            01 / JOSHUA CASTILLO MEDINA
-        </div>
-
-    </div>
-
-
-    <div class="hero-overlay"></div>
+    <div class="hero-image"></div>
 
 
     <div class="hero-content reveal">
 
+
         <div class="small-title">
+
             Portafolio profesional
+
         </div>
 
 
@@ -1444,6 +1787,7 @@ footer{
 
 
         <div class="hero-info">
+
 
             <div class="role">
 
@@ -1466,11 +1810,14 @@ footer{
 
             </a>
 
+
         </div>
+
 
     </div>
 
 </header>
+
 
 
 <!-- =====================================================
@@ -1479,13 +1826,19 @@ footer{
 
 <section id="perfil">
 
+
     <div class="profile reveal">
+
 
         <div>
 
+
             <div class="label">
+
                 01 / Perfil profesional
+
             </div>
+
 
             <h2 class="profile-title">
 
@@ -1499,10 +1852,12 @@ footer{
 
             </h2>
 
+
         </div>
 
 
         <div class="profile-text">
+
 
             <p>
 
@@ -1535,9 +1890,12 @@ footer{
 
             </p>
 
+
         </div>
 
+
     </div>
+
 
 
     <div class="highlights reveal">
@@ -1546,11 +1904,15 @@ footer{
         <div class="highlight">
 
             <div class="highlight-number">
+
                 Ventas
+
             </div>
 
             <div class="highlight-title">
+
                 Cierre comercial
+
             </div>
 
         </div>
@@ -1559,11 +1921,15 @@ footer{
         <div class="highlight">
 
             <div class="highlight-number">
+
                 Clientes
+
             </div>
 
             <div class="highlight-title">
+
                 Atención y postventa
+
             </div>
 
         </div>
@@ -1572,11 +1938,15 @@ footer{
         <div class="highlight">
 
             <div class="highlight-number">
+
                 Marca
+
             </div>
 
             <div class="highlight-title">
+
                 Representación profesional
+
             </div>
 
         </div>
@@ -1587,6 +1957,7 @@ footer{
 </section>
 
 
+
 <!-- =====================================================
      EXPERIENCIA
 ===================================================== -->
@@ -1595,8 +1966,11 @@ footer{
     class="experience"
     id="experiencia">
 
+
     <div class="label">
+
         02 / Experiencia profesional
+
     </div>
 
 
@@ -1605,25 +1979,27 @@ footer{
 
         <article class="job reveal">
 
+
             <div class="job-date">
+
                 2020 — 2022
+
             </div>
 
 
             <div>
 
+
                 <h3 class="job-title">
 
-                    Ejecutivo de Ventas y
-                    Atención al Cliente
+                    Ejecutivo de Ventas y Atención al Cliente
 
                 </h3>
 
 
                 <div class="job-company">
 
-                    Select Insurance ·
-                    Empresa estadounidense
+                    Select Insurance · Empresa estadounidense
 
                 </div>
 
@@ -1631,48 +2007,65 @@ footer{
                 <ul class="job-list">
 
                     <li>
+
                         Atención directa a clientes interesados
                         en seguros de automóvil e identificación
                         de necesidades.
+
                     </li>
 
                     <li>
+
                         Asesoría durante el proceso de compra,
                         elaboración de cotizaciones y ventas
                         en tiempo real.
+
                     </li>
 
                     <li>
+
                         Seguimiento de prospectos hasta concretar
                         la venta y gestión de documentación
                         de pólizas.
+
                     </li>
 
                     <li>
+
                         Atención postventa, gestión de cobros
                         mensuales y resolución de incidencias.
+
                     </li>
 
                     <li>
+
                         Cumplimiento de objetivos comerciales
                         y seguimiento de oportunidades de venta.
+
                     </li>
 
                 </ul>
 
+
             </div>
+
 
         </article>
 
 
+
         <article class="job reveal">
 
+
             <div class="job-date">
+
                 2022 — 2023
+
             </div>
 
 
             <div>
+
 
                 <h3 class="job-title">
 
@@ -1684,8 +2077,7 @@ footer{
 
                 <div class="job-company">
 
-                    Empresa estadounidense ·
-                    Venta de automóviles
+                    Empresa estadounidense · Venta de automóviles
 
                 </div>
 
@@ -1693,50 +2085,66 @@ footer{
                 <ul class="job-list">
 
                     <li>
+
                         Gestión de comunicación con clientes
                         potenciales a través de redes sociales.
+
                     </li>
 
                     <li>
+
                         Búsqueda activa de prospectos interesados
                         en la compra de vehículos.
+
                     </li>
 
                     <li>
+
                         Atención de mensajes y seguimiento
                         de interesados.
+
                     </li>
 
                     <li>
+
                         Calificación de prospectos para determinar
                         interés y perfil de compra.
+
                     </li>
 
                     <li>
+
                         Coordinación y agendamiento de citas
                         en tienda física.
+
                     </li>
 
                 </ul>
 
+
             </div>
+
 
         </article>
 
 
+
         <article class="job reveal">
 
+
             <div class="job-date">
+
                 2025 — Actualidad
+
             </div>
 
 
             <div>
 
+
                 <h3 class="job-title">
 
-                    Gerente Operativo de
-                    Rancho de Engorda
+                    Gerente Operativo de Rancho de Engorda
 
                 </h3>
 
@@ -1751,23 +2159,31 @@ footer{
                 <ul class="job-list">
 
                     <li>
+
                         Liderazgo de personal y coordinación
                         de actividades diarias.
+
                     </li>
 
                     <li>
+
                         Atención a proveedores, administración
                         de insumos y control de recursos.
+
                     </li>
 
                     <li>
+
                         Responsabilidad sobre resultados
                         operativos y funcionamiento del rancho.
+
                     </li>
 
                 </ul>
 
+
             </div>
+
 
         </article>
 
@@ -1777,19 +2193,24 @@ footer{
 </section>
 
 
+
 <!-- =====================================================
      COMPETENCIAS
 ===================================================== -->
 
 <section>
 
+
     <div class="skills-section reveal">
 
 
         <div>
 
+
             <div class="label">
+
                 03 / Competencias
+
             </div>
 
 
@@ -1805,10 +2226,12 @@ footer{
 
             </h2>
 
+
         </div>
 
 
         <div class="skills">
+
 
             <span class="skill">
                 Ventas y cierre comercial
@@ -1858,15 +2281,18 @@ footer{
                 Representación de marca
             </span>
 
+
         </div>
+
 
     </div>
 
 </section>
 
 
+
 <!-- =====================================================
-     ÁLBUM
+     ALBUM
 ===================================================== -->
 
 <section
@@ -1879,8 +2305,11 @@ footer{
 
         <div>
 
+
             <div class="label">
+
                 04 / Álbum
+
             </div>
 
 
@@ -1892,6 +2321,7 @@ footer{
                 del CV.
 
             </h2>
+
 
         </div>
 
@@ -1909,31 +2339,25 @@ footer{
 
         </p>
 
+
     </div>
 
 
-    <div class="gallery" id="gallery">
+
+    <div class="gallery">
 
 
         <!-- FOTO 1 -->
 
         <figure
             class="photo photo-1 reveal"
-            data-index="0">
+            data-image="1.jpg">
 
-            <picture>
-
-                <source
-                    media="(max-width: 800px)"
-                    srcset="mobile_assets/1-mobile.webp">
-
-                <img
-                    src="mobile_assets/1.webp"
-                    alt="Joshua Castillo Medina — fotografía 1"
-                    loading="lazy"
-                    decoding="async">
-
-            </picture>
+            <img
+                src="1.jpg"
+                alt="Joshua Castillo Medina — fotografía 1"
+                loading="lazy"
+                decoding="async">
 
             <span class="photo-number">
                 01
@@ -1942,25 +2366,18 @@ footer{
         </figure>
 
 
+
         <!-- FOTO 2 -->
 
         <figure
             class="photo photo-2 reveal"
-            data-index="1">
+            data-image="2.jpg">
 
-            <picture>
-
-                <source
-                    media="(max-width: 800px)"
-                    srcset="mobile_assets/2-mobile.webp">
-
-                <img
-                    src="mobile_assets/2.webp"
-                    alt="Joshua Castillo Medina — fotografía 2"
-                    loading="lazy"
-                    decoding="async">
-
-            </picture>
+            <img
+                src="2.jpg"
+                alt="Joshua Castillo Medina — fotografía 2"
+                loading="lazy"
+                decoding="async">
 
             <span class="photo-number">
                 02
@@ -1969,25 +2386,18 @@ footer{
         </figure>
 
 
+
         <!-- FOTO 3 -->
 
         <figure
             class="photo photo-3 reveal"
-            data-index="2">
+            data-image="3.jpg">
 
-            <picture>
-
-                <source
-                    media="(max-width: 800px)"
-                    srcset="mobile_assets/3-mobile.webp">
-
-                <img
-                    src="mobile_assets/3.webp"
-                    alt="Joshua Castillo Medina — fotografía 3"
-                    loading="lazy"
-                    decoding="async">
-
-            </picture>
+            <img
+                src="3.jpg"
+                alt="Joshua Castillo Medina — fotografía 3"
+                loading="lazy"
+                decoding="async">
 
             <span class="photo-number">
                 03
@@ -1996,25 +2406,18 @@ footer{
         </figure>
 
 
+
         <!-- FOTO 4 -->
 
         <figure
             class="photo photo-4 reveal"
-            data-index="3">
+            data-image="4.jpeg">
 
-            <picture>
-
-                <source
-                    media="(max-width: 800px)"
-                    srcset="mobile_assets/4-mobile.webp">
-
-                <img
-                    src="mobile_assets/4.webp"
-                    alt="Joshua Castillo Medina — fotografía 4"
-                    loading="lazy"
-                    decoding="async">
-
-            </picture>
+            <img
+                src="4.jpeg"
+                alt="Joshua Castillo Medina — fotografía 4"
+                loading="lazy"
+                decoding="async">
 
             <span class="photo-number">
                 04
@@ -2023,25 +2426,18 @@ footer{
         </figure>
 
 
+
         <!-- FOTO 5 -->
 
         <figure
             class="photo photo-5 reveal"
-            data-index="4">
+            data-image="5.jpeg">
 
-            <picture>
-
-                <source
-                    media="(max-width: 800px)"
-                    srcset="mobile_assets/5-mobile.webp">
-
-                <img
-                    src="mobile_assets/5.webp"
-                    alt="Joshua Castillo Medina — fotografía 5"
-                    loading="lazy"
-                    decoding="async">
-
-            </picture>
+            <img
+                src="5.jpeg"
+                alt="Joshua Castillo Medina — fotografía 5"
+                loading="lazy"
+                decoding="async">
 
             <span class="photo-number">
                 05
@@ -2050,25 +2446,18 @@ footer{
         </figure>
 
 
+
         <!-- FOTO 6 -->
 
         <figure
             class="photo photo-6 reveal"
-            data-index="5">
+            data-image="6.jpg">
 
-            <picture>
-
-                <source
-                    media="(max-width: 800px)"
-                    srcset="mobile_assets/6-mobile.webp">
-
-                <img
-                    src="mobile_assets/6.webp"
-                    alt="Joshua Castillo Medina — fotografía 6"
-                    loading="lazy"
-                    decoding="async">
-
-            </picture>
+            <img
+                src="6.jpg"
+                alt="Joshua Castillo Medina — fotografía 6"
+                loading="lazy"
+                decoding="async">
 
             <span class="photo-number">
                 06
@@ -2077,25 +2466,18 @@ footer{
         </figure>
 
 
+
         <!-- FOTO 7 -->
 
         <figure
             class="photo photo-7 reveal"
-            data-index="6">
+            data-image="7.jpeg">
 
-            <picture>
-
-                <source
-                    media="(max-width: 800px)"
-                    srcset="mobile_assets/7-mobile.webp">
-
-                <img
-                    src="mobile_assets/7.webp"
-                    alt="Joshua Castillo Medina — fotografía 7"
-                    loading="lazy"
-                    decoding="async">
-
-            </picture>
+            <img
+                src="7.jpeg"
+                alt="Joshua Castillo Medina — fotografía 7"
+                loading="lazy"
+                decoding="async">
 
             <span class="photo-number">
                 07
@@ -2104,25 +2486,18 @@ footer{
         </figure>
 
 
+
         <!-- FOTO 8 -->
 
         <figure
             class="photo photo-8 reveal"
-            data-index="7">
+            data-image="8.jpg">
 
-            <picture>
-
-                <source
-                    media="(max-width: 800px)"
-                    srcset="mobile_assets/8-mobile.webp">
-
-                <img
-                    src="mobile_assets/8.webp"
-                    alt="Joshua Castillo Medina — fotografía 8"
-                    loading="lazy"
-                    decoding="async">
-
-            </picture>
+            <img
+                src="8.jpg"
+                alt="Joshua Castillo Medina — fotografía 8"
+                loading="lazy"
+                decoding="async">
 
             <span class="photo-number">
                 08
@@ -2131,25 +2506,18 @@ footer{
         </figure>
 
 
+
         <!-- FOTO 9 -->
 
         <figure
             class="photo photo-9 reveal"
-            data-index="8">
+            data-image="9.jpg">
 
-            <picture>
-
-                <source
-                    media="(max-width: 800px)"
-                    srcset="mobile_assets/9-mobile.webp">
-
-                <img
-                    src="mobile_assets/9.webp"
-                    alt="Joshua Castillo Medina — fotografía 9"
-                    loading="lazy"
-                    decoding="async">
-
-            </picture>
+            <img
+                src="9.jpg"
+                alt="Joshua Castillo Medina — fotografía 9"
+                loading="lazy"
+                decoding="async">
 
             <span class="photo-number">
                 09
@@ -2163,6 +2531,7 @@ footer{
 </section>
 
 
+
 <!-- =====================================================
      FORMACIÓN
 ===================================================== -->
@@ -2172,8 +2541,11 @@ footer{
 
     <div class="reveal">
 
+
         <div class="label">
+
             05 / Formación
+
         </div>
 
 
@@ -2189,13 +2561,16 @@ footer{
 
         </h2>
 
+
     </div>
+
 
 
     <div>
 
 
         <div class="education-card reveal">
+
 
             <h3>
 
@@ -2213,7 +2588,9 @@ footer{
 
             </p>
 
+
         </div>
+
 
 
         <div
@@ -2267,9 +2644,11 @@ footer{
 
         </div>
 
+
     </div>
 
 </section>
+
 
 
 <!-- =====================================================
@@ -2283,8 +2662,11 @@ footer{
 
     <div class="reveal">
 
+
         <div class="label">
+
             06 / Contacto
+
         </div>
 
 
@@ -2297,7 +2679,9 @@ footer{
 
         </h2>
 
+
     </div>
+
 
 
     <div class="contact-bottom reveal">
@@ -2328,7 +2712,7 @@ footer{
 
 
         <a
-            href="./CV_Joshua_Castillo_Medina.pdf"
+            href="CV_Joshua_Castillo_Medina.pdf"
             target="_blank"
             class="pdf-button">
 
@@ -2342,6 +2726,7 @@ footer{
 </section>
 
 
+
 <!-- =====================================================
      FOOTER
 ===================================================== -->
@@ -2352,11 +2737,13 @@ footer{
         Joshua Castillo Medina
     </span>
 
+
     <span>
         Embajador de Marca · 2026
     </span>
 
 </footer>
+
 
 
 <!-- =====================================================
@@ -2381,7 +2768,7 @@ footer{
     <button
         class="arrow arrow-left"
         id="previous"
-        aria-label="Anterior">
+        aria-label="Fotografía anterior">
 
         ‹
 
@@ -2397,7 +2784,7 @@ footer{
     <button
         class="arrow arrow-right"
         id="next"
-        aria-label="Siguiente">
+        aria-label="Fotografía siguiente">
 
         ›
 
@@ -2407,42 +2794,50 @@ footer{
 </div>
 
 
+
 <script>
 
 /* =====================================================
-   GALERÍA
+   LIGHTBOX
 ===================================================== */
 
-const images =
+const photos =
     [...document.querySelectorAll('.photo img')];
-
-
-const loaded =
-    images.map(
-        img => img.currentSrc || img.src
-    );
 
 
 const lightbox =
     document.getElementById('lightbox');
 
 
-const lbImg =
+const lightboxImage =
     document.getElementById('lightboxImage');
 
 
-let current = 0;
+const closeButton =
+    document.getElementById('closeLightbox');
 
 
-/* =====================================================
-   ABRIR
-===================================================== */
+const previousButton =
+    document.getElementById('previous');
+
+
+const nextButton =
+    document.getElementById('next');
+
+
+let currentPhoto = 0;
+
+
 
 function openLightbox(index){
 
-    current = index;
+    currentPhoto = index;
 
-    showImage();
+    lightboxImage.src =
+        photos[currentPhoto].src;
+
+    lightboxImage.alt =
+        photos[currentPhoto].alt;
 
     lightbox.classList.add('active');
 
@@ -2451,24 +2846,6 @@ function openLightbox(index){
 }
 
 
-/* =====================================================
-   MOSTRAR
-===================================================== */
-
-function showImage(){
-
-    lbImg.src =
-        loaded[current];
-
-    lbImg.alt =
-        `Joshua Castillo Medina — fotografía ${current + 1}`;
-
-}
-
-
-/* =====================================================
-   CERRAR
-===================================================== */
 
 function closeLightbox(){
 
@@ -2479,83 +2856,78 @@ function closeLightbox(){
 }
 
 
-/* =====================================================
-   CAMBIAR
-===================================================== */
 
-function move(direction){
+function changePhoto(direction){
 
-    current =
-        (
-            current +
-            direction +
-            images.length
-        )
-        %
-        images.length;
+    currentPhoto += direction;
 
-    showImage();
+
+    if(currentPhoto < 0){
+
+        currentPhoto =
+            photos.length - 1;
+
+    }
+
+
+    if(currentPhoto >= photos.length){
+
+        currentPhoto = 0;
+
+    }
+
+
+    lightboxImage.src =
+        photos[currentPhoto].src;
+
+    lightboxImage.alt =
+        photos[currentPhoto].alt;
 
 }
 
 
-/* =====================================================
-   CLICK FOTOS
-===================================================== */
 
-images.forEach(
-    (img,index)=>{
+photos.forEach(
+    (photo,index)=>{
 
-        img
+        photo
         .closest('.photo')
         .addEventListener(
             'click',
-            ()=>{
-                openLightbox(index);
-            }
+            ()=>openLightbox(index)
         );
 
     }
 );
 
 
-/* =====================================================
-   BOTONES
-===================================================== */
 
-document
-    .getElementById('closeLightbox')
-    .onclick =
-    closeLightbox;
+closeButton.addEventListener(
+    'click',
+    closeLightbox
+);
 
 
-document
-    .getElementById('previous')
-    .onclick =
-    ()=>{
-        move(-1);
-    };
+
+previousButton.addEventListener(
+    'click',
+    ()=>changePhoto(-1)
+);
 
 
-document
-    .getElementById('next')
-    .onclick =
-    ()=>{
-        move(1);
-    };
+
+nextButton.addEventListener(
+    'click',
+    ()=>changePhoto(1)
+);
 
 
-/* =====================================================
-   CERRAR AL HACER CLICK AFUERA
-===================================================== */
 
 lightbox.addEventListener(
     'click',
-    e=>{
+    event=>{
 
-        if(
-            e.target === lightbox
-        ){
+        if(event.target === lightbox){
 
             closeLightbox();
 
@@ -2565,13 +2937,10 @@ lightbox.addEventListener(
 );
 
 
-/* =====================================================
-   TECLADO
-===================================================== */
 
 document.addEventListener(
     'keydown',
-    e=>{
+    event=>{
 
         if(
             !lightbox.classList.contains('active')
@@ -2582,29 +2951,23 @@ document.addEventListener(
         }
 
 
-        if(
-            e.key === 'Escape'
-        ){
+        if(event.key === 'Escape'){
 
             closeLightbox();
 
         }
 
 
-        if(
-            e.key === 'ArrowLeft'
-        ){
+        if(event.key === 'ArrowLeft'){
 
-            move(-1);
+            changePhoto(-1);
 
         }
 
 
-        if(
-            e.key === 'ArrowRight'
-        ){
+        if(event.key === 'ArrowRight'){
 
-            move(1);
+            changePhoto(1);
 
         }
 
@@ -2613,18 +2976,18 @@ document.addEventListener(
 
 
 /* =====================================================
-   SWIPE CELULAR
+   SWIPE EN CELULAR
 ===================================================== */
 
-let startX = 0;
+let touchStartX = 0;
 
 
 lightbox.addEventListener(
     'touchstart',
-    e=>{
+    event=>{
 
-        startX =
-            e.changedTouches[0].screenX;
+        touchStartX =
+            event.changedTouches[0].screenX;
 
     },
     {
@@ -2635,21 +2998,21 @@ lightbox.addEventListener(
 
 lightbox.addEventListener(
     'touchend',
-    e=>{
+    event=>{
 
-        const endX =
-            e.changedTouches[0].screenX;
+        const touchEndX =
+            event.changedTouches[0].screenX;
 
-        const distance =
-            endX - startX;
+        const difference =
+            touchEndX - touchStartX;
 
 
         if(
-            Math.abs(distance) > 50
+            Math.abs(difference) > 50
         ){
 
-            move(
-                distance > 0
+            changePhoto(
+                difference > 0
                     ? -1
                     : 1
             );
@@ -2664,16 +3027,14 @@ lightbox.addEventListener(
 
 
 /* =====================================================
-   SCROLL REVEAL
+   REVEAL
 ===================================================== */
 
-const reveals =
+const revealElements =
     document.querySelectorAll('.reveal');
 
 
-if(
-    'IntersectionObserver' in window
-){
+if('IntersectionObserver' in window){
 
     const observer =
         new IntersectionObserver(
@@ -2687,9 +3048,9 @@ if(
                         ){
 
                             entry
-                                .target
-                                .classList
-                                .add('show');
+                            .target
+                            .classList
+                            .add('show');
 
 
                             observer.unobserve(
@@ -2708,17 +3069,21 @@ if(
         );
 
 
-    reveals.forEach(
+    revealElements.forEach(
         element=>{
+
             observer.observe(element);
+
         }
     );
 
 }else{
 
-    reveals.forEach(
+    revealElements.forEach(
         element=>{
+
             element.classList.add('show');
+
         }
     );
 
@@ -2728,4 +3093,5 @@ if(
 
 
 </body>
+
 </html>
